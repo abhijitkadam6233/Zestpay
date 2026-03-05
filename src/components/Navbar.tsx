@@ -68,11 +68,18 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-2xl font-bold text-primary flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
-                <span className="text-xl">Z</span>
-              </div>
-              <span className={isSolid ? 'text-primary' : 'text-white'}>Zest Pay</span>
+            <Link to="/" className="flex items-center gap-2">
+              <img 
+                src="https://storage.googleapis.com/static-content-001/projects/nrtondb7m6n75u5pfqww2o/assets/zestpay-logo-v3.png" 
+                alt="Zestpay Logo" 
+                className="h-12 w-auto"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = 'https://picsum.photos/seed/zestpay/200/80';
+                }}
+              />
             </Link>
           </div>
           
@@ -86,7 +93,7 @@ const Navbar = () => {
                 <Link
                   to="/"
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-all ${
-                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-white hover:text-white hover:bg-white/10'
+                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
                   Home
@@ -104,7 +111,7 @@ const Navbar = () => {
               >
                 <button
                   className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-all ${
-                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-white hover:text-white hover:bg-white/10'
+                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
                   Services <ChevronDown size={14} className={`transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`} />
@@ -175,7 +182,7 @@ const Navbar = () => {
               >
                 <button
                   className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-all ${
-                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-white hover:text-white hover:bg-white/10'
+                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
                   Who We Are <ChevronDown size={14} className={`transition-transform duration-200 ${showWhoWeAre ? 'rotate-180' : ''}`} />
@@ -231,7 +238,7 @@ const Navbar = () => {
                   <a
                     href={link.href}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all block ${
-                      isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-white hover:text-white hover:bg-white/10'
+                      isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                     }`}
                   >
                     {link.name}
@@ -250,7 +257,7 @@ const Navbar = () => {
                 <Link 
                   to="/register"
                   className={`px-4 py-2 rounded-md text-sm font-semibold transition-all inline-block ${
-                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-white hover:text-white hover:bg-white/10'
+                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
                   Register
@@ -267,7 +274,7 @@ const Navbar = () => {
               >
                 <button 
                   className={`px-4 py-2 rounded-md text-sm font-semibold transition-all ${
-                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-white hover:text-white hover:bg-white/10'
+                    isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
                   Login
@@ -283,7 +290,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isSolid ? 'text-slate-700' : 'text-white'
+                isSolid ? 'text-slate-700' : 'text-slate-700'
               } hover:text-primary focus:outline-none`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}

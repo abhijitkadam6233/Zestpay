@@ -9,7 +9,7 @@ const BlogPage = () => {
       title: 'The Future of Digital Banking in Rural India',
       excerpt: 'How AEPS and Micro ATMs are transforming the way rural communities access financial services.',
       date: 'March 15, 2024',
-      author: 'Zest Pay Team',
+      author: 'Zestpay Team',
       image: 'https://picsum.photos/seed/ruralbanking/800/400'
     },
     {
@@ -17,7 +17,7 @@ const BlogPage = () => {
       title: '5 Ways Retailers Can Increase Their Monthly Income',
       excerpt: 'Discover how adding digital services to your shop can significantly boost your revenue and footfall.',
       date: 'February 28, 2024',
-      author: 'Zest Pay Team',
+      author: 'Zestpay Team',
       image: 'https://picsum.photos/seed/retailincome/800/400'
     },
     {
@@ -25,7 +25,7 @@ const BlogPage = () => {
       title: 'Understanding the Importance of Secure Transactions',
       excerpt: 'A deep dive into the security measures that protect your business and your customers.',
       date: 'February 10, 2024',
-      author: 'Zest Pay Team',
+      author: 'Zestpay Team',
       image: 'https://picsum.photos/seed/securetrans/800/400'
     }
   ];
@@ -38,7 +38,7 @@ const BlogPage = () => {
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
       <div className="bg-slate-900 py-20 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Zest Pay Blog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Zestpay Blog</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">
           Insights, news, and updates from the world of digital finance and retail empowerment.
         </p>

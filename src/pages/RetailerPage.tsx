@@ -11,7 +11,7 @@ const RetailerPage = () => {
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
       <div className="bg-slate-900 py-20 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Become a Zest Pay Retailer</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Become a Zestpay Retailer</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">
           Transform your shop into a digital banking hub and increase your daily income.
         </p>
@@ -20,9 +20,9 @@ const RetailerPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Partner with Zest Pay?</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Partner with Zestpay?</h2>
             <p className="text-slate-600 mb-8 leading-relaxed">
-              As a Zest Pay Retailer, you can offer a wide range of digital financial services to your customers, including AEPS, Money Transfer, Bill Payments, and more. Enhance your business offerings, attract more footfall, and earn attractive commissions on every transaction.
+              As a Zestpay Retailer, you can offer a wide range of digital financial services to your customers, including AEPS, Money Transfer, Bill Payments, and more. Enhance your business offerings, attract more footfall, and earn attractive commissions on every transaction.
             </p>
             
             <ul className="space-y-4">

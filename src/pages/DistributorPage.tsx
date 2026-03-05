@@ -11,7 +11,7 @@ const DistributorPage = () => {
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
       <div className="bg-slate-900 py-20 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Become a Zest Pay Distributor</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Become a Zestpay Distributor</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">
           Build your own network of retailers and earn passive income on every transaction.
         </p>
@@ -22,7 +22,7 @@ const DistributorPage = () => {
           <div>
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Grow Your Business Network</h2>
             <p className="text-slate-600 mb-8 leading-relaxed">
-              As a Zest Pay Distributor, you can build a robust network of retailers in your area. You earn a commission on every transaction performed by the retailers in your network. It's a scalable business model with high earning potential.
+              As a Zestpay Distributor, you can build a robust network of retailers in your area. You earn a commission on every transaction performed by the retailers in your network. It's a scalable business model with high earning potential.
             </p>
             
             <ul className="space-y-4">

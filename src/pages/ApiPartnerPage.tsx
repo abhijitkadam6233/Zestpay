@@ -13,7 +13,7 @@ const ApiPartnerPage = () => {
       <div className="bg-slate-900 py-20 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">API Partner</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-          Integrate Zest Pay's powerful financial services directly into your existing applications.
+          Integrate Zestpay's powerful financial services directly into your existing applications.
         </p>
       </div>
 

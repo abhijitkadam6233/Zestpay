@@ -7,8 +7,8 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About Us', path: '/about' },
-    { name: 'Zest Pay Retailer', path: '/retailer' },
-    { name: 'Zest Pay Distributor', path: '/distributor' },
+    { name: 'Zestpay Retailer', path: '/retailer' },
+    { name: 'Zestpay Distributor', path: '/distributor' },
     { name: 'White Label Partner', path: '/white-label' },
     { name: 'API Partner', path: '/api-partner' },
     { name: 'Blog', path: '/blog' },
@@ -27,13 +27,20 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
-                <span className="text-xl font-bold">Z</span>
-              </div>
-              <span className="text-2xl font-bold text-slate-900">Zest Pay</span>
+              <img 
+                src="https://storage.googleapis.com/static-content-001/projects/nrtondb7m6n75u5pfqww2o/assets/zestpay-logo-v3.png" 
+                alt="Zestpay Logo" 
+                className="h-12 w-auto"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = 'https://picsum.photos/seed/zestpay/200/80';
+                }}
+              />
             </div>
             <p className="text-slate-600 leading-relaxed text-sm">
-              Zest Pay delivers smart, Aadhaar-enabled payment solutions and digital financial services designed for modern businesses. From instant money transfers and utility bill payments to mobile recharges and travel bookings, we provide everything retailers need on one powerful platform. With secure transactions, fast settlements, and reliable support, Zest Pay helps entrepreneurs expand their services and increase earnings. Partner with Zest Pay and power your growth with confidence.
+              Zestpay delivers smart, Aadhaar-enabled payment solutions and digital financial services designed for modern businesses. From instant money transfers and utility bill payments to mobile recharges and travel bookings, we provide everything retailers need on one powerful platform. With secure transactions, fast settlements, and reliable support, Zestpay helps entrepreneurs expand their services and increase earnings. Partner with Zestpay and power your growth with confidence.
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
@@ -201,7 +208,7 @@ const Footer = () => {
 
         <div className="pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-sm">
-            © {currentYear} Zest Pay. All rights reserved.
+            © {currentYear} Zestpay. All rights reserved.
           </p>
         </div>
       </div>

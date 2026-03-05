@@ -13,7 +13,8 @@ import {
   Building2,
   Umbrella,
   Bus,
-  Zap
+  Zap,
+  ArrowRight
 } from 'lucide-react';
 
 const services = [
@@ -77,14 +78,23 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-slate-50">
+    <section id="services" className="pt-24 pb-12 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-brand font-bold text-sm uppercase tracking-widest mb-4"
+          >
+            Our Ecosystem
+          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-primary mb-6"
           >
             Dual Wallet – Multiple Services
           </motion.h2>
@@ -92,35 +102,35 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
+            transition={{ delay: 0.2 }}
+            className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed"
           >
             Empower your business with our comprehensive suite of digital financial services. Everything you need in one dual wallet platform.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
             >
               <Link
                 to={`/services/${service.id}`}
-                className="block bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group h-full"
+                className="group block bg-white p-8 rounded-[2rem] shadow-premium border border-slate-100 hover:shadow-hover hover:-translate-y-2 transition-all duration-300 h-full"
               >
-                <div className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  {React.cloneElement(service.icon as React.ReactElement, { size: 28 })}
+                <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                  {React.cloneElement(service.icon as React.ReactElement, { size: 32 })}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-brand transition-colors">{service.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-8">
                   {service.description}
                 </p>
-                <div className="mt-6 flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
-                  Learn More <Zap size={16} className="ml-1" />
+                <div className="flex items-center text-brand font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all">
+                  Learn More <ArrowRight size={14} className="ml-2" />
                 </div>
               </Link>
             </motion.div>
@@ -130,9 +140,9 @@ const Services = () => {
         <div className="mt-16 text-center">
           <Link 
             to="/services"
-            className="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-primary/20"
+            className="inline-flex items-center gap-2 bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/10"
           >
-            View All 25+ Services
+            View All 25+ Services <ArrowRight size={20} />
           </Link>
         </div>
       </div>

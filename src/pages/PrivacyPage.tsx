@@ -20,7 +20,7 @@ const PrivacyPage = () => {
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 prose prose-slate max-w-none">
           <h2>1. Introduction</h2>
           <p>
-            At Zest Pay, operated by Bharat Mitra Innovations Pvt Ltd., we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal information when you use our website and services.
+            At Zestpay, operated by Bharat Mitra Innovations Pvt Ltd., we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal information when you use our website and services.
           </p>
 
           <h2>2. Information We Collect</h2>

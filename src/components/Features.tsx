@@ -12,10 +12,38 @@ import {
 } from 'lucide-react';
 
 const stats = [
-  { icon: <History />, label: '10 years industry experience', value: '10+' },
-  { icon: <Users />, label: 'Active Users', value: '50000' },
-  { icon: <TrendingUp />, label: 'Highest Commission', value: 'Up to ₹12' },
-  { icon: <ShieldCheck />, label: 'Secure Platform', value: '100%' },
+  { 
+    icon: <History />, 
+    label: 'Industry Experience', 
+    value: '10+', 
+    sublabel: 'Years of Excellence',
+    color: 'text-blue-600',
+    bg: 'bg-blue-50'
+  },
+  { 
+    icon: <Users />, 
+    label: 'Active Users', 
+    value: '50,000+', 
+    sublabel: 'Trusted Partners',
+    color: 'text-emerald-600',
+    bg: 'bg-emerald-50'
+  },
+  { 
+    icon: <TrendingUp />, 
+    label: 'Highest Commission', 
+    value: '₹12', 
+    sublabel: 'Per Transaction',
+    color: 'text-orange-600',
+    bg: 'bg-orange-50'
+  },
+  { 
+    icon: <ShieldCheck />, 
+    label: 'Secure Platform', 
+    value: '100%', 
+    sublabel: 'Bank-Grade Security',
+    color: 'text-indigo-600',
+    bg: 'bg-indigo-50'
+  },
 ];
 
 const features = [
@@ -43,31 +71,33 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="pt-12 pb-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              Why Choose <span className="text-primary">Zest Pay?</span>
+            <div className="text-brand font-bold text-sm uppercase tracking-widest mb-4">Why Zestpay</div>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+              Empowering Local <br />
+              <span className="text-brand">Entrepreneurs</span>
             </h2>
-            <p className="text-lg text-slate-600 mb-10">
-              Zest Pay is India's leading digital banking and bill payment platform, helping local retail stores transform into digital hubs. With over 14 years of experience, we provide a secure and reliable ecosystem for financial services.
+            <p className="text-lg text-slate-600 mb-12 leading-relaxed">
+              Zestpay is India's leading digital banking and bill payment platform, helping local retail stores transform into digital hubs. With over 14 years of experience, we provide a secure and reliable ecosystem for financial services.
             </p>
             
-            <div className="grid sm:grid-cols-2 gap-8">
+            <div className="space-y-8">
               {features.map((feature, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center">
-                    {React.cloneElement(feature.icon as React.ReactElement, { size: 24 })}
+                <div key={index} className="flex gap-6 group">
+                  <div className="flex-shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-brand/10 transition-colors">
+                    {React.cloneElement(feature.icon as React.ReactElement, { size: 28, className: "group-hover:scale-110 transition-transform" })}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <h3 className="text-xl font-bold text-primary mb-2">{feature.title}</h3>
+                    <p className="text-slate-500 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -83,25 +113,44 @@ const Features = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {stats.map((stat, index) => (
-                <div 
+                <motion.div 
                   key={index} 
-                  className={`p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all ${
-                    index % 2 === 1 ? 'mt-8' : ''
-                  } ${index === 0 ? 'bg-blue-50' : 'bg-white'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={`relative p-8 rounded-[2.5rem] border border-slate-100 shadow-premium hover:shadow-2xl transition-all duration-500 bg-white group overflow-hidden ${
+                    index % 2 === 1 ? 'lg:mt-12' : ''
+                  }`}
                 >
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6">
-                    {React.cloneElement(stat.icon as React.ReactElement, { size: 24 })}
+                  {/* Decorative background shape */}
+                  <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 ${stat.bg.replace('bg-', 'bg-')}`}></div>
+                  
+                  <div className={`w-16 h-16 ${stat.bg} rounded-2xl flex items-center justify-center ${stat.color} mb-8 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
+                    {React.cloneElement(stat.icon as React.ReactElement, { size: 32, strokeWidth: 1.5 })}
                   </div>
-                  <p className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</p>
-                  <p className="text-slate-500 font-medium text-sm">{stat.label}</p>
-                </div>
+                  
+                  <div className="relative">
+                    <div className="flex items-baseline gap-1 mb-1">
+                      <span className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+                        {stat.value}
+                      </span>
+                    </div>
+                    <div className="text-slate-900 font-bold text-sm mb-1">{stat.label}</div>
+                    <div className="text-slate-400 text-xs font-medium uppercase tracking-wider">{stat.sublabel}</div>
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div className={`absolute bottom-0 left-0 h-1.5 w-0 group-hover:w-full transition-all duration-500 ${stat.bg.replace('bg-', 'bg-')}`}></div>
+                </motion.div>
               ))}
             </div>
             
-            {/* Background decorative circle */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+            {/* Background decorative elements */}
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand/5 rounded-full blur-[120px] opacity-30"></div>
           </motion.div>
         </div>
       </div>

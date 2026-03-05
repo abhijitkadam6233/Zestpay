@@ -13,7 +13,7 @@ const AboutPage = () => {
       <div className="bg-slate-900 py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">About Us</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto px-4">
-          Learn more about our mission, vision, and the team behind Zest Pay.
+          Learn more about our mission, vision, and the team behind Zestpay.
         </p>
       </div>
       <About />

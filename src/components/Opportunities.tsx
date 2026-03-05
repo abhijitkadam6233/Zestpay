@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Store, Users, Code, ArrowRight } from 'lucide-react';
+import { Store, Users, Code, ArrowRight, Landmark } from 'lucide-react';
 
 const opportunities = [
   {
-    title: 'Become A Zest Pay Retailer',
+    title: 'Become A Zestpay Retailer',
     description: 'Transform your shop into a mini bank. Offer 25+ services and earn up to ₹50,000 per month.',
     icon: <Store className="text-blue-600" />,
     cta: 'Register as Retailer',
     color: 'bg-blue-50'
   },
   {
-    title: 'Become A Zest Pay Distributor',
+    title: 'Become A Zestpay Distributor',
     description: 'Build your own network of retailers. Earn commissions on every transaction made by your network.',
     icon: <Users className="text-green-600" />,
     cta: 'Register as Distributor',
@@ -23,12 +23,19 @@ const opportunities = [
     icon: <Code className="text-purple-600" />,
     cta: 'Register as API Partner',
     color: 'bg-purple-50'
+  },
+  {
+    title: 'BC Banking',
+    description: 'Become a Business Correspondent and provide essential banking services like account opening and cash deposits.',
+    icon: <Landmark className="text-orange-600" />,
+    cta: 'Register for BC Banking',
+    color: 'bg-orange-50'
   }
 ];
 
 const Opportunities = () => {
   return (
-    <section id="opportunities" className="py-24 bg-slate-900 text-white overflow-hidden relative">
+    <section id="opportunities" className="pt-12 pb-24 bg-slate-900 text-white overflow-hidden relative">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '60px 60px' }}></div>
       </div>
@@ -41,7 +48,7 @@ const Opportunities = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Zest Pay Business Opportunities
+            Zestpay Business Opportunities
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +61,7 @@ const Opportunities = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {opportunities.map((opp, index) => (
             <motion.div
               key={index}

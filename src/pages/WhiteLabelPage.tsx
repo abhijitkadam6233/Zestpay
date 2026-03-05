@@ -29,7 +29,7 @@ const WhiteLabelPage = () => {
               {[
                 'Fully branded portal with your logo and colors',
                 'Custom domain name integration',
-                'Access to all Zest Pay services',
+                'Access to all Zestpay services',
                 'Comprehensive admin panel for managing users',
                 'Zero technical maintenance required'
               ].map((benefit, index) => (

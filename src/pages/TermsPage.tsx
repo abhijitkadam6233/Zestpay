@@ -20,7 +20,7 @@ const TermsPage = () => {
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 prose prose-slate max-w-none">
           <h2>1. Introduction</h2>
           <p>
-            Welcome to Zest Pay. These Terms and Conditions govern your use of our website and services. By accessing or using our platform, you agree to be bound by these terms.
+            Welcome to Zestpay. These Terms and Conditions govern your use of our website and services. By accessing or using our platform, you agree to be bound by these terms.
           </p>
 
           <h2>2. Use of Services</h2>
@@ -38,12 +38,12 @@ const TermsPage = () => {
 
           <h2>4. Intellectual Property</h2>
           <p>
-            All content, trademarks, logos, and intellectual property on the Zest Pay platform are owned by Bharat Mitra Innovations Pvt Ltd. You may not use, reproduce, or distribute any content without our prior written consent.
+            All content, trademarks, logos, and intellectual property on the Zestpay platform are owned by Bharat Mitra Innovations Pvt Ltd. You may not use, reproduce, or distribute any content without our prior written consent.
           </p>
 
           <h2>5. Limitation of Liability</h2>
           <p>
-            Zest Pay shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the use of our services. We do not guarantee uninterrupted or error-free operation of the platform.
+            Zestpay shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the use of our services. We do not guarantee uninterrupted or error-free operation of the platform.
           </p>
 
           <h2>6. Modifications to Terms</h2>

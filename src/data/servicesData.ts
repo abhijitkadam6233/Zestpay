@@ -12,37 +12,37 @@ A biometric device is an essential requirement for AEPS operations. Since transa
   },
   'aadhaar-atm-services': {
     title: 'Aadhaar ATM Services',
-    description: `Zest Pay AEPS enables customers to perform banking transactions using Aadhaar credentials and biometric authentication. The service allows cash withdrawals, balance checks, mini statement generation, and fund transfers between Aadhaar-linked accounts, ensuring convenience for users without ATM cards or bank branches.
+    description: `Zestpay AEPS enables customers to perform banking transactions using Aadhaar credentials and biometric authentication. The service allows cash withdrawals, balance checks, mini statement generation, and fund transfers between Aadhaar-linked accounts, ensuring convenience for users without ATM cards or bank branches.
 
 Retailers offering AEPS earn the highest margins in the industry, benefiting from a profitable revenue stream while providing vital banking services. The platform is designed for ease of use, security, and regulatory compliance, ensuring transactions are instant, encrypted, and transparent. Automated reporting and settlement features simplify retailer operations, reducing manual reconciliation.
 
 AEPS plays a significant role in financial inclusion by extending essential banking services to semi-urban and rural communities. Customers experience secure, reliable, and fast access to banking, while retailers build trust and engagement with their communities. The service promotes digital adoption and encourages cashless transactions, offering an alternative to traditional banking systems.
 
-By integrating AEPS with other Zest Pay services like MATM, cash management, and bill payments, retailers can provide a holistic financial ecosystem. The system supports multiple banks and enables high-volume transactions efficiently. With real-time updates, detailed analytics, and robust security measures, AEPS ensures safe and profitable operations. Retailers enjoy simplified operations, instant settlement, and increased revenue, while customers benefit from transparency, convenience, and financial empowerment.
+By integrating AEPS with other Zestpay services like MATM, cash management, and bill payments, retailers can provide a holistic financial ecosystem. The system supports multiple banks and enables high-volume transactions efficiently. With real-time updates, detailed analytics, and robust security measures, AEPS ensures safe and profitable operations. Retailers enjoy simplified operations, instant settlement, and increased revenue, while customers benefit from transparency, convenience, and financial empowerment.
 
-Zest Pay AEPS is not just a service; it’s a tool for financial empowerment, bridging gaps in banking accessibility, fostering trust, and providing sustainable revenue opportunities for retail partners. Its combination of technology, profitability, and community impact makes it a leading digital banking solution in India.`
+Zestpay AEPS is not just a service; it’s a tool for financial empowerment, bridging gaps in banking accessibility, fostering trust, and providing sustainable revenue opportunities for retail partners. Its combination of technology, profitability, and community impact makes it a leading digital banking solution in India.`
   },
   'micro-atm-machine-services': {
     title: 'Micro ATM Machine Services',
-    description: `Zest Pay Micro ATM (MATM) offers a portable banking solution enabling customers to perform cash withdrawals, balance checks, and mini statement generation at retail points. Designed to provide banking services in areas with limited ATM or bank branch access, MATM enhances financial inclusion while ensuring convenience for users.
+    description: `Zestpay Micro ATM (MATM) offers a portable banking solution enabling customers to perform cash withdrawals, balance checks, and mini statement generation at retail points. Designed to provide banking services in areas with limited ATM or bank branch access, MATM enhances financial inclusion while ensuring convenience for users.
 
 Retailers offering MATM services earn the highest margin in the industry, creating an additional revenue stream. The device is simple to operate, with biometric authentication and encrypted transactions ensuring secure and reliable operations. Customers receive instant confirmations and real-time updates for every transaction.
 
 MATM supports multiple banks, allowing customers flexibility and access to their preferred banking services. Retailers benefit from automated settlement, detailed dashboards, and simplified reporting, making operations efficient and scalable. The portability of the device enables retailers to extend banking services across urban, semi-urban, and rural regions, bridging the gap in financial accessibility.
 
-Integration with other Zest Pay services such as cash management, bill payments, and mobile recharge allows retailers to offer a comprehensive financial ecosystem. The service enhances trust between retailers and customers, promotes digital adoption, and encourages cashless transactions. Security measures include end-to-end encryption, fraud monitoring, and compliance with banking regulations.
+Integration with other Zestpay services such as cash management, bill payments, and mobile recharge allows retailers to offer a comprehensive financial ecosystem. The service enhances trust between retailers and customers, promotes digital adoption, and encourages cashless transactions. Security measures include end-to-end encryption, fraud monitoring, and compliance with banking regulations.
 
-Overall, Zest Pay MATM combines operational efficiency, profitability, technology, and accessibility, providing customers with convenient local banking while empowering retailers to earn high margins and expand service offerings. It is an essential solution for community banking and financial inclusion in India.`
+Overall, Zestpay MATM combines operational efficiency, profitability, technology, and accessibility, providing customers with convenient local banking while empowering retailers to earn high margins and expand service offerings. It is an essential solution for community banking and financial inclusion in India.`
   },
   'money-transfer-services': {
     title: 'Money Transfer Services',
-    description: `Zest Pay’s Domestic Money Transfer (DMT) service provides a secure, fast, and reliable way for customers to send money across India. The platform supports multiple channels, including IMPS, NEFT, and RTGS, ensuring instant transfer and confirmation through SMS and email notifications. Customers can use mobile numbers or verified bank account details for sending funds, providing convenience, accessibility, and reducing the need to visit physical bank branches.
+    description: `Zestpay’s Domestic Money Transfer (DMT) service provides a secure, fast, and reliable way for customers to send money across India. The platform supports multiple channels, including IMPS, NEFT, and RTGS, ensuring instant transfer and confirmation through SMS and email notifications. Customers can use mobile numbers or verified bank account details for sending funds, providing convenience, accessibility, and reducing the need to visit physical bank branches.
 
 Retailers offering DMT earn the highest margin in the industry, making it a profitable addition to their business operations. The platform offers a user-friendly interface, detailed transaction reports, and automated reconciliation tools, enabling retailers to manage multiple transactions efficiently. Security is a key focus, with encrypted transactions, two-factor authentication, and fraud monitoring ensuring every transfer is safe and reliable.
 
 By facilitating instant money transfers, DMT enhances financial inclusion, particularly in semi-urban and rural areas where traditional banking infrastructure is limited. Retailers benefit from instant settlements, operational dashboards, and automated reporting, streamlining operations while increasing customer trust. Customers gain the advantage of a fast, transparent, and convenient transfer experience, while retailers enjoy increased footfall and loyalty.
 
-Integration with other Zest Pay services, such as mobile recharge, bill payments, and cash management, allows retailers to offer a complete digital financial ecosystem. The platform empowers communities by providing reliable access to essential financial services, bridging the gap between traditional banking and modern digital solutions. Overall, DMT from Zest Pay combines technology, security, convenience, and profitability to create a seamless experience for customers and a sustainable revenue model for retailers, making it a leading choice in India’s fintech sector.`
+Integration with other Zestpay services, such as mobile recharge, bill payments, and cash management, allows retailers to offer a complete digital financial ecosystem. The platform empowers communities by providing reliable access to essential financial services, bridging the gap between traditional banking and modern digital solutions. Overall, DMT from Zestpay combines technology, security, convenience, and profitability to create a seamless experience for customers and a sustainable revenue model for retailers, making it a leading choice in India’s fintech sector.`
   },
   'emi-cash-collection': {
     title: 'EMI & Cash Collection',
@@ -76,23 +76,23 @@ Overall, Digital Gold Selling combines tradition with technology, enabling safe,
   // Recharge & Utility Services
   'utility-bill-payments': {
     title: 'Utility Bill Payments',
-    description: `Zest Pay BBPS is a unified platform allowing customers to pay all their utility bills, including electricity, water, gas, broadband, and more, from a single interface. The service provides instant confirmation of payment, real-time updates, and supports multiple payment modes such as UPI, wallets, cards, and net banking. Retailers offering BBPS earn the highest margin in the industry, making it a profitable service for both urban and rural communities.
+    description: `Zestpay BBPS is a unified platform allowing customers to pay all their utility bills, including electricity, water, gas, broadband, and more, from a single interface. The service provides instant confirmation of payment, real-time updates, and supports multiple payment modes such as UPI, wallets, cards, and net banking. Retailers offering BBPS earn the highest margin in the industry, making it a profitable service for both urban and rural communities.
 
 The platform emphasizes reliability, transparency, and operational efficiency. Automated receipts, detailed transaction records, and easy reconciliation help retailers manage accounts effortlessly while providing clear proof of payment to customers. Customers benefit from the convenience of timely bill payments, eliminating the need to visit multiple offices or rely on cash-based systems. BBPS reduces the risk of late payments, streamlines financial management, and encourages digital adoption among users.
 
-Retailers gain increased footfall and repeated customer engagement by providing a trusted, fast, and secure service. Integration with other Zest Pay services, including mobile recharge, AEPS, and MATM, allows retailers to deliver a complete digital financial ecosystem. Security measures include encrypted transactions, regulatory compliance, and monitoring to prevent fraud, ensuring safe operations.
+Retailers gain increased footfall and repeated customer engagement by providing a trusted, fast, and secure service. Integration with other Zestpay services, including mobile recharge, AEPS, and MATM, allows retailers to deliver a complete digital financial ecosystem. Security measures include encrypted transactions, regulatory compliance, and monitoring to prevent fraud, ensuring safe operations.
 
-Zest Pay BBPS generates revenue while strengthening the relationship between retailers and customers. Retailers can track commissions, automate settlements, and provide seamless support, increasing operational efficiency and profitability. By combining modern technology, high margins, customer convenience, and financial inclusion, BBPS empowers retailers to provide an essential service while supporting customers in managing their daily financial responsibilities.`
+Zestpay BBPS generates revenue while strengthening the relationship between retailers and customers. Retailers can track commissions, automate settlements, and provide seamless support, increasing operational efficiency and profitability. By combining modern technology, high margins, customer convenience, and financial inclusion, BBPS empowers retailers to provide an essential service while supporting customers in managing their daily financial responsibilities.`
   },
   'mobile-dth-recharge': {
     title: 'Mobile & DTH Recharge',
-    description: `Zest Pay offers a reliable platform for mobile and DTH recharge across all major operators. Customers receive instant recharge, transparent billing, and access to special offers and plans.
+    description: `Zestpay offers a reliable platform for mobile and DTH recharge across all major operators. Customers receive instant recharge, transparent billing, and access to special offers and plans.
 
 Retailers offering recharge services earn the highest margin in the industry, while increasing footfall and repeat business. The platform supports multiple payment modes, automated receipts, and easy reconciliation. Customers enjoy convenience, speed, and reliability.
 
 Integration with other services such as bill payments, QR payments, and MATM allows retailers to provide a complete financial ecosystem. Security measures include encrypted transactions and fraud monitoring.
 
-Zest Pay Mobile and DTH Recharge enhances digital adoption, customer satisfaction, and profitability for retailers. The service is modern, secure, and efficient, empowering both customers and retailers.`
+Zestpay Mobile and DTH Recharge enhances digital adoption, customer satisfaction, and profitability for retailers. The service is modern, secure, and efficient, empowering both customers and retailers.`
   },
 
   // Travel & Ticketing Services
