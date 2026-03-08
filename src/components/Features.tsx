@@ -113,44 +113,45 @@ const Features = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {stats.map((stat, index) => (
                 <motion.div 
                   key={index} 
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className={`relative p-8 rounded-[2.5rem] border border-slate-100 shadow-premium hover:shadow-2xl transition-all duration-500 bg-white group overflow-hidden ${
-                    index % 2 === 1 ? 'lg:mt-12' : ''
+                  transition={{ delay: index * 0.15, duration: 0.6 }}
+                  whileHover={{ y: -12, scale: 1.03 }}
+                  className={`relative p-10 rounded-[3rem] border border-slate-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] transition-all duration-700 bg-white group overflow-hidden ${
+                    index % 2 === 1 ? 'lg:mt-16' : ''
                   }`}
                 >
-                  {/* Decorative background shape */}
-                  <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 ${stat.bg.replace('bg-', 'bg-')}`}></div>
+                  {/* Decorative background gradient */}
+                  <div className={`absolute -right-10 -top-10 w-40 h-40 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-700 blur-3xl ${stat.bg}`}></div>
                   
-                  <div className={`w-16 h-16 ${stat.bg} rounded-2xl flex items-center justify-center ${stat.color} mb-8 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-                    {React.cloneElement(stat.icon as React.ReactElement, { size: 32, strokeWidth: 1.5 })}
+                  {/* Icon Container */}
+                  <div className={`w-20 h-20 ${stat.bg} rounded-3xl flex items-center justify-center ${stat.color} mb-10 group-hover:rotate-[10deg] transition-all duration-500 shadow-sm border border-white/50`}>
+                    {React.cloneElement(stat.icon as React.ReactElement, { size: 36, strokeWidth: 1.5 })}
                   </div>
                   
                   <div className="relative">
-                    <div className="flex items-baseline gap-1 mb-1">
-                      <span className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+                    <div className="flex items-baseline gap-1 mb-2">
+                      <span className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-none">
                         {stat.value}
                       </span>
                     </div>
-                    <div className="text-slate-900 font-bold text-sm mb-1">{stat.label}</div>
-                    <div className="text-slate-400 text-xs font-medium uppercase tracking-wider">{stat.sublabel}</div>
+                    <div className="text-slate-900 font-bold text-lg mb-2 tracking-tight">{stat.label}</div>
+                    <div className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">{stat.sublabel}</div>
                   </div>
 
-                  {/* Bottom accent line */}
-                  <div className={`absolute bottom-0 left-0 h-1.5 w-0 group-hover:w-full transition-all duration-500 ${stat.bg.replace('bg-', 'bg-')}`}></div>
+                  {/* Bottom accent line - more subtle and elegant */}
+                  <div className={`absolute bottom-0 left-0 h-2 w-0 group-hover:w-full transition-all duration-700 ${stat.bg.replace('bg-', 'bg-')}`}></div>
                 </motion.div>
               ))}
             </div>
             
-            {/* Background decorative elements */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand/5 rounded-full blur-[120px] opacity-30"></div>
+            {/* Background decorative elements - enhanced blur */}
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-brand/5 rounded-full blur-[150px] opacity-40"></div>
           </motion.div>
         </div>
       </div>

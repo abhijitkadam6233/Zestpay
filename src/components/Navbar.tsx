@@ -70,9 +70,9 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="https://storage.googleapis.com/static-content-001/projects/nrtondb7m6n75u5pfqww2o/assets/zestpay-logo-v3.png" 
+                src="https://storage.googleapis.com/static-content-001/projects/nrtondb7m6n75u5pfqww2o/assets/zestpay-logo-v2.png" 
                 alt="Zestpay Logo" 
-                className="h-12 w-auto"
+                className="h-14 w-auto object-contain"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

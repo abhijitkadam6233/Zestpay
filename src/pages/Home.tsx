@@ -5,6 +5,7 @@ import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Opportunities from '../components/Opportunities';
 import Partners from '../components/Partners';
+import DownloadApp from '../components/DownloadApp';
 import Impact from '../components/Impact';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Features />
       <Testimonials />
       <Partners />
+      <DownloadApp />
       <Impact />
       <Opportunities />
     </main>

@@ -20,11 +20,13 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import EnquireNow from './components/EnquireNow';
 
 const App = () => {
   return (
     <Router>
       <ScrollToTop />
+      <EnquireNow />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
