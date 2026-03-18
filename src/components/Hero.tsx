@@ -2,9 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const heroBanners = [
-  "/hero-1.png",
-  "/hero-2.png",
-  "/hero-3.png"
+  {
+    local: "/hero-1.png",
+    fallback: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1920&auto=format&fit=crop"
+  },
+  {
+    local: "/hero-2.png",
+    fallback: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1920&auto=format&fit=crop"
+  },
+  {
+    local: "/hero-3.png",
+    fallback: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1920&auto=format&fit=crop"
+  }
 ];
 
 const Hero = () => {
@@ -22,9 +31,9 @@ const Hero = () => {
       <div className="relative w-full overflow-hidden">
         {/* Invisible placeholder to establish the correct aspect ratio based on the first image */}
         <img 
-          src={heroBanners[0]} 
+          src={heroBanners[0].local} 
           onError={(e) => {
-            e.currentTarget.src = `https://placehold.co/1920x600/e2e8f0/475569?text=Please+Upload+${heroBanners[0].replace('/', '')}+to+public+folder`;
+            e.currentTarget.src = heroBanners[0].fallback;
           }}
           alt="Placeholder" 
           className="w-full h-auto max-h-[60vh] md:max-h-[550px] object-cover invisible" 
@@ -34,9 +43,9 @@ const Hero = () => {
         <AnimatePresence>
           <motion.img 
             key={currentSlide}
-            src={heroBanners[currentSlide]} 
+            src={heroBanners[currentSlide].local} 
             onError={(e) => {
-              e.currentTarget.src = `https://placehold.co/1920x600/e2e8f0/475569?text=Please+Upload+${heroBanners[currentSlide].replace('/', '')}+to+public+folder`;
+              e.currentTarget.src = heroBanners[currentSlide].fallback;
             }}
             alt={`Zestpay Banner ${currentSlide + 1}`} 
             initial={{ opacity: 0 }}
