@@ -1,67 +1,66 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-const partners = [
-  {
-    name: "Fino Payments Bank",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fino_Payments_Bank_Logo.svg/1200px-Fino_Payments_Bank_Logo.svg.png"
-  },
-  {
-    name: "Bank of Baroda",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Bank_of_Baroda_Logo.svg/1200px-Bank_of_Baroda_Logo.svg.png"
-  },
-  {
-    name: "Airtel Payments Bank",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Airtel_Payments_Bank_logo.svg/1200px-Airtel_Payments_Bank_logo.svg.png"
-  },
-  {
-    name: "ICICI Bank",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/1200px-ICICI_Bank_Logo.svg.png"
-  },
-  {
-    name: "State Bank of India",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/1200px-State_Bank_of_India_logo.svg.png"
-  },
-  {
-    name: "HDFC Bank",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/1200px-HDFC_Bank_Logo.svg.png"
-  }
-];
-
 const Partners = () => {
+  const partners = [
+    { name: "Airtel", logo: "/partner-1.svg" },
+    { name: "Bharat BillPay", logo: "/partner-2.svg" },
+    { name: "DishTV", logo: "/partner-3.svg" },
+    { name: "ICICI Bank", logo: "/partner-4.svg" },
+    { name: "NPCI", logo: "/partner-5.svg" },
+    { name: "NSDL Payments Bank", logo: "/partner-6.svg" },
+    { name: "SBI", logo: "/partner-7.svg" },
+    { name: "Tata Play", logo: "/partner-8.svg" },
+    { name: "UTIITSL", logo: "/partner-9.svg" },
+    { name: "YES Bank", logo: "/partner-10.svg" }
+  ];
+
+  // Triple the list to ensure a long enough strip for the loop
+  const allPartners = [...partners, ...partners, ...partners];
+
   return (
-    <section className="pt-8 pb-4 bg-white border-y border-slate-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <h2 className="text-2xl font-bold text-slate-900 text-center">Our Trusted Partners</h2>
+    <section className="relative pt-8 pb-16 bg-white overflow-hidden border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Trusted Partners</h2>
+          <div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
       </div>
       
-      <div className="relative flex overflow-x-hidden">
-        <div className="animate-marquee whitespace-nowrap flex items-center gap-12 py-4">
-          {partners.concat(partners).map((partner, index) => (
-            <div key={index} className="flex items-center justify-center px-8">
+      <div className="relative flex overflow-hidden h-48 items-center">
+        <motion.div 
+          className="flex whitespace-nowrap items-center"
+          animate={{
+            x: [0, "-33.33%"],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 25,
+              ease: "linear",
+            },
+          }}
+        >
+          {allPartners.map((partner, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 flex items-center justify-center px-8 md:px-12"
+            >
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+                className="h-20 md:h-28 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
           ))}
-        </div>
-
-        <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-12 py-4">
-          {partners.concat(partners).map((partner, index) => (
-            <div key={index} className="flex items-center justify-center px-8">
-              <img 
-                src={partner.logo} 
-                alt={partner.name} 
-                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          ))}
-        </div>
+        </motion.div>
       </div>
+
+      {/* Gradient Overlays for smooth edges */}
+      <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+      <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
     </section>
   );
 };

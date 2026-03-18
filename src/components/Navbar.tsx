@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Mail, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import Logo from './Logo';
 
 const Tooltip = ({ text }: { text: string }) => (
   <motion.div
-    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+    initial={{ opacity: 0, y: 8, scale: 0.9 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
-    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-    transition={{ duration: 0.2 }}
-    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-lg shadow-xl whitespace-nowrap z-50 pointer-events-none"
+    exit={{ opacity: 0, y: 8, scale: 0.9 }}
+    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1.5 bg-primary text-white text-[11px] font-bold rounded-lg shadow-[0_8px_16px_rgba(37,99,235,0.25)] whitespace-nowrap z-50 pointer-events-none uppercase tracking-wider"
   >
-    <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45" />
+    <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45" />
     {text}
   </motion.div>
 );
@@ -57,10 +58,10 @@ const Navbar = () => {
   ];
 
   const navLinks = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', to: '/' },
     { name: 'Opportunities', href: '#opportunities' },
-    { name: 'Income Calculator', href: '/income-calculator' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'Income Calculator', to: '/income-calculator' },
+    { name: 'Contact Us', to: '/contact' },
   ];
 
   return (
@@ -69,17 +70,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <img 
-                src="https://storage.googleapis.com/static-content-001/projects/nrtondb7m6n75u5pfqww2o/assets/zestpay-logo-v2.png" 
-                alt="Zestpay Logo" 
-                className="h-14 w-auto object-contain"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.onerror = null;
-                  target.src = 'https://picsum.photos/seed/zestpay/200/80';
-                }}
-              />
+              <Logo className="scale-75 origin-left" />
             </Link>
           </div>
           
@@ -92,7 +83,7 @@ const Navbar = () => {
               >
                 <Link
                   to="/"
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all ${
+                  className={`px-3 py-2 rounded-md text-base font-medium transition-all ${
                     isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
@@ -110,11 +101,11 @@ const Navbar = () => {
                 onMouseLeave={() => setShowServices(false)}
               >
                 <button
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-all ${
+                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-base font-medium transition-all ${
                     isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
-                  Services <ChevronDown size={14} className={`transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`} />
+                  Services <ChevronDown size={16} className={`transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`} />
                 </button>
                 
                 <AnimatePresence>
@@ -124,7 +115,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute left-0 mt-0 w-64 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-100 py-3 z-50 overflow-hidden"
+                      className="absolute left-0 mt-0 w-72 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-100 py-3 z-50 overflow-hidden"
                     >
                       <motion.div 
                         initial="hidden"
@@ -145,13 +136,13 @@ const Navbar = () => {
                             <Link
                               to={`/services/${service.id}`}
                               onClick={() => setShowServices(false)}
-                              className="px-6 py-3 text-[15px] text-slate-700 hover:bg-blue-50/80 hover:text-primary transition-all font-medium flex items-center justify-between group/item"
+                              className="px-6 py-2.5 text-[14px] text-slate-700 hover:bg-primary/5 hover:text-primary transition-all font-medium flex items-center justify-between group/item"
                             >
                               {service.name}
                               <motion.span 
                                 initial={{ opacity: 0, x: -5 }}
                                 whileHover={{ opacity: 1, x: 0 }}
-                                className="text-primary"
+                                className="text-primary opacity-0 group-hover/item:opacity-100 transition-opacity"
                               >
                                 →
                               </motion.span>
@@ -162,10 +153,10 @@ const Navbar = () => {
                           <Link
                             to="/services"
                             onClick={() => setShowServices(false)}
-                            className="px-6 py-3 text-[15px] text-primary hover:bg-blue-50/80 transition-all font-bold flex items-center justify-between group/item"
+                            className="px-6 py-3 text-[14px] text-primary hover:bg-primary/5 transition-all font-bold flex items-center justify-between group/item"
                           >
                             View All Services
-                            <span>→</span>
+                            <span className="group-hover/item:translate-x-1 transition-transform">→</span>
                           </Link>
                         </div>
                       </motion.div>
@@ -181,11 +172,11 @@ const Navbar = () => {
                 onMouseLeave={() => setShowWhoWeAre(false)}
               >
                 <button
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-all ${
+                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-base font-medium transition-all ${
                     isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
-                  Who We Are <ChevronDown size={14} className={`transition-transform duration-200 ${showWhoWeAre ? 'rotate-180' : ''}`} />
+                  Who We Are <ChevronDown size={16} className={`transition-transform duration-200 ${showWhoWeAre ? 'rotate-180' : ''}`} />
                 </button>
                 
                 <AnimatePresence>
@@ -195,7 +186,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute left-0 mt-0 w-48 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-100 py-3 z-50 overflow-hidden"
+                      className="absolute left-0 mt-0 w-52 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-100 py-3 z-50 overflow-hidden"
                     >
                       <motion.div 
                         initial="hidden"
@@ -216,7 +207,7 @@ const Navbar = () => {
                             <Link
                               to={item.href}
                               onClick={() => setShowWhoWeAre(false)}
-                              className="px-6 py-3 text-[15px] text-slate-700 hover:bg-blue-50/80 hover:text-primary transition-all font-medium block"
+                              className="px-6 py-2.5 text-[14px] text-slate-700 hover:bg-primary/5 hover:text-primary transition-all font-medium block"
                             >
                               {item.name}
                             </Link>
@@ -235,14 +226,25 @@ const Navbar = () => {
                   onMouseEnter={() => setHoveredLink(link.name)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
-                  <a
-                    href={link.href}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all block ${
-                      isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
-                    }`}
-                  >
-                    {link.name}
-                  </a>
+                  {link.to ? (
+                    <Link
+                      to={link.to}
+                      className={`px-3 py-2 rounded-md text-base font-medium transition-all block ${
+                        isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className={`px-3 py-2 rounded-md text-base font-medium transition-all block ${
+                        isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  )}
                   <AnimatePresence>
                     {hoveredLink === link.name && <Tooltip text={link.name} />}
                   </AnimatePresence>
@@ -256,7 +258,7 @@ const Navbar = () => {
               >
                 <Link 
                   to="/register"
-                  className={`px-4 py-2 rounded-md text-sm font-semibold transition-all inline-block ${
+                  className={`px-4 py-2 rounded-md text-base font-semibold transition-all inline-block ${
                     isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
@@ -272,13 +274,14 @@ const Navbar = () => {
                 onMouseEnter={() => setHoveredLink('Login')}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                <button 
-                  className={`px-4 py-2 rounded-md text-sm font-semibold transition-all ${
+                <Link 
+                  to="/login"
+                  className={`px-4 py-2 rounded-md text-base font-semibold transition-all block ${
                     isSolid ? 'text-slate-700 hover:text-primary hover:bg-slate-100' : 'text-slate-700 hover:text-primary hover:bg-slate-100'
                   }`}
                 >
                   Login
-                </button>
+                </Link>
                 <AnimatePresence>
                   {hoveredLink === 'Login' && <Tooltip text="Login" />}
                 </AnimatePresence>
@@ -316,17 +319,20 @@ const Navbar = () => {
               }}
               className="px-2 pt-2 pb-3 space-y-1 sm:px-3"
             >
-              <motion.a
+              <motion.div
                 variants={{
                   hidden: { opacity: 0, x: -20 },
                   visible: { opacity: 1, x: 0 }
                 }}
-                href="/"
-                className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
-                onClick={() => setIsOpen(false)}
               >
-                Home
-              </motion.a>
+                <Link
+                  to="/"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
+                </Link>
+              </motion.div>
               
               {/* Mobile Services */}
               <motion.div 
@@ -382,18 +388,31 @@ const Navbar = () => {
               </motion.div>
 
               {navLinks.slice(1).map((link) => (
-                <motion.a
+                <motion.div
                   key={link.name}
                   variants={{
                     hidden: { opacity: 0, x: -20 },
                     visible: { opacity: 1, x: 0 }
                   }}
-                  href={link.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
-                  onClick={() => setIsOpen(false)}
                 >
-                  {link.name}
-                </motion.a>
+                  {link.to ? (
+                    <Link
+                      to={link.to}
+                      className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                </motion.div>
               ))}
 
               <motion.div 
@@ -410,9 +429,13 @@ const Navbar = () => {
                 >
                   Register
                 </Link>
-                <button className="w-full bg-white text-slate-700 border border-slate-200 px-6 py-3 rounded-lg text-base font-semibold hover:bg-slate-50 hover:text-primary transition-all">
+                <Link 
+                  to="/login"
+                  className="w-full block text-center bg-white text-slate-700 border border-slate-200 px-6 py-3 rounded-lg text-base font-semibold hover:bg-slate-50 hover:text-primary transition-all"
+                  onClick={() => setIsOpen(false)}
+                >
                   Login
-                </button>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>

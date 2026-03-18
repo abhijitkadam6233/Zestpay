@@ -69,11 +69,15 @@ const DownloadApp = () => {
                 {/* Retailers */}
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
-                    {[1, 2, 3].map((i) => (
+                    {[
+                      "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?auto=format&fit=crop&q=80&w=100&h=100",
+                      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=100&h=100",
+                      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100&h=100"
+                    ].map((url, i) => (
                       <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-slate-200">
                         <img 
-                          src={`https://i.pravatar.cc/100?u=zestpay${i}`} 
-                          alt="User" 
+                          src={url} 
+                          alt="Happy Retailer" 
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
                         />
@@ -81,7 +85,7 @@ const DownloadApp = () => {
                     ))}
                   </div>
                   <div className="text-left">
-                    <div className="font-bold text-slate-900 text-lg leading-none">5 Lakh+</div>
+                    <div className="font-bold text-slate-900 text-lg leading-none">1 Lakh+</div>
                     <div className="text-slate-500 text-xs mt-1">Happy Retailers</div>
                   </div>
                 </div>
@@ -114,15 +118,21 @@ const DownloadApp = () => {
               {/* Main Phone - Front */}
               <div className="relative z-30 w-64 md:w-72 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] rounded-[3rem]">
                 <div className="bg-slate-900 rounded-[3rem] p-3 border-4 border-slate-800">
-                  <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative">
+                  <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative p-4 flex items-center justify-center">
                     <img 
-                      src="https://images.unsplash.com/photo-1616077168079-7e09a677fb2c?auto=format&fit=crop&q=80&w=400&h=800" 
+                      src="/app-screen-1.png" 
                       alt="Zestpay App Dashboard" 
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
+                      className="max-w-full max-h-full object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1616077168079-7e09a677fb2c?auto=format&fit=crop&q=80&w=400&h=800";
+                        e.currentTarget.className = "w-full h-full object-cover";
+                        // Remove padding if using fallback
+                        if (e.currentTarget.parentElement) {
+                          e.currentTarget.parentElement.style.padding = '0';
+                        }
+                      }}
                     />
-                    {/* Overlay to simulate app UI */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-brand/10 to-transparent pointer-events-none"></div>
                   </div>
                 </div>
               </div>
@@ -130,50 +140,25 @@ const DownloadApp = () => {
               {/* Secondary Phone - Back */}
               <div className="absolute z-20 -right-4 lg:-right-8 top-12 w-56 md:w-64 transform rotate-12 opacity-90">
                 <div className="bg-slate-900 rounded-[2.5rem] p-2.5 shadow-2xl border-4 border-slate-800">
-                  <div className="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5] relative">
+                  <div className="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5] relative p-4 flex items-center justify-center">
                     <img 
-                      src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400&h=800" 
+                      src="/app-screen-2.jpeg" 
                       alt="Zestpay Services" 
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
+                      className="max-w-full max-h-full object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400&h=800";
+                        e.currentTarget.className = "w-full h-full object-cover";
+                        // Remove padding if using fallback
+                        if (e.currentTarget.parentElement) {
+                          e.currentTarget.parentElement.style.padding = '0';
+                        }
+                      }}
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Floating Badge */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-8 top-1/4 z-40 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden md:block"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                    <ArrowRight size={20} />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500 font-medium">Instant Payout</div>
-                    <div className="text-sm font-bold text-slate-900">Success</div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 2 */}
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -right-8 bottom-1/4 z-40 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden md:block"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center text-brand">
-                    <Star size={20} className="fill-brand" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500 font-medium">Top Rated</div>
-                    <div className="text-sm font-bold text-slate-900">Fintech App</div>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>

@@ -8,13 +8,13 @@ const MissionPage = () => {
   }, []);
 
   return (
-    <div className="pt-24 pb-20 bg-slate-50 min-h-screen">
+    <div className="pt-24 pb-12 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
           >
             Our <span className="text-primary">Mission</span>
           </motion.h1>
@@ -22,7 +22,7 @@ const MissionPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 max-w-3xl mx-auto"
+            className="text-lg text-slate-600 max-w-3xl mx-auto"
           >
             Empowering India through secure, seamless, and technology-driven digital financial services.
           </motion.p>
@@ -35,13 +35,13 @@ const MissionPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100"
+            className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100"
           >
-            <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary mb-8">
-              <Target size={32} />
+            <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary mb-4">
+              <Target size={24} />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Mission – Zestpay</h3>
-            <div className="space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">Mission – Zestpay</h3>
+            <div className="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
               <p>
                 At Zestpay, our mission is to transform the financial landscape of India by delivering secure, seamless, and technology-driven digital financial services that empower individuals, retailers, and small businesses. We are committed to bridging the gap between traditional banking and modern fintech innovation by making essential financial services accessible to every corner of the country, including rural and underserved communities.
               </p>

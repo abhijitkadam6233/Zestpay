@@ -104,7 +104,7 @@ const IncomeCalculator = () => {
                         min="0"
                         value={transactions[service.id] || ''}
                         onChange={(e) => handleTransactionChange(service.id, e.target.value)}
-                        className="w-24 px-3 py-2 bg-slate-50/50 border border-slate-200 rounded-xl text-center text-base text-slate-700 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all shadow-sm [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        className="w-24 px-3 py-2 bg-slate-50/50 border border-slate-200 rounded-xl text-center text-base text-slate-700 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all shadow-sm [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         placeholder="0"
                       />
                     </td>

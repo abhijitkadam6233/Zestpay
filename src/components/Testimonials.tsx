@@ -70,7 +70,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-12 bg-slate-50 relative overflow-hidden">
+    <section className="pt-4 pb-4 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-10">
           <motion.h2 

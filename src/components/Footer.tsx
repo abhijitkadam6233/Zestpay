@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowUpRight } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +12,6 @@ const Footer = () => {
     { name: 'Zestpay Distributor', path: '/distributor' },
     { name: 'White Label Partner', path: '/white-label' },
     { name: 'API Partner', path: '/api-partner' },
-    { name: 'Blog', path: '/blog' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -27,17 +27,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img 
-                src="https://storage.googleapis.com/static-content-001/projects/nrtondb7m6n75u5pfqww2o/assets/zestpay-logo-v2.png" 
-                alt="Zestpay Logo" 
-                className="h-14 w-auto brightness-0 invert object-contain"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.onerror = null;
-                  target.src = 'https://picsum.photos/seed/zestpay/200/80';
-                }}
-              />
+              <Logo className="scale-75 origin-left" dark />
             </div>
             <p className="text-slate-400 leading-relaxed text-sm">
               Zestpay delivers smart, Aadhaar-enabled payment solutions and digital financial services designed for modern businesses. From instant money transfers and utility bill payments to mobile recharges and travel bookings, we provide everything retailers need on one powerful platform. With secure transactions, fast settlements, and reliable support, Zestpay helps entrepreneurs expand their services and increase earnings. Partner with Zestpay and power your growth with confidence.
@@ -171,7 +161,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-white mb-6">Address</h3>
             <ul className="space-y-6">
               <li className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 flex-shrink-0">
                   <MapPin size={18} />
                 </div>
                 <div>

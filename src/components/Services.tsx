@@ -6,15 +6,15 @@ import {
   CreditCard, 
   Smartphone, 
   ShieldCheck, 
-  Plane, 
   Train, 
-  Receipt, 
-  Wallet, 
-  Building2,
-  Umbrella,
+  ReceiptText, 
   Bus,
-  Zap,
-  ArrowRight
+  ArrowRight,
+  IdCard,
+  HandCoins,
+  Coins,
+  Gift,
+  Send
 } from 'lucide-react';
 
 const services = [
@@ -36,14 +36,14 @@ const services = [
     title: 'Money Transfer Services',
     id: 'money-transfer-services',
     description: 'Secure, fast, and reliable way to send money across India instantly.',
-    icon: <Wallet className="text-green-600" />,
+    icon: <Send className="text-green-600" />,
     color: 'bg-green-50'
   },
   {
     title: 'Utility Bill Payments',
     id: 'utility-bill-payments',
     description: 'One-stop solution for all utility bill payments including electricity and water.',
-    icon: <Receipt className="text-orange-600" />,
+    icon: <ReceiptText className="text-orange-600" />,
     color: 'bg-orange-50'
   },
   {
@@ -64,21 +64,49 @@ const services = [
     title: 'Insurance Agent Registration',
     id: 'insurance-agent-registration',
     description: 'Become a certified Point of Sales Person (POSP) for insurance.',
-    icon: <Umbrella className="text-amber-600" />,
+    icon: <ShieldCheck className="text-amber-600" />,
     color: 'bg-amber-50'
   },
   {
     title: 'PAN Card Agent Registration',
     id: 'pan-card-agent-registration',
     description: 'Assist customers in applying for new PAN cards or making corrections.',
-    icon: <Building2 className="text-red-600" />,
+    icon: <IdCard className="text-red-600" />,
     color: 'bg-red-50'
+  },
+  {
+    title: 'EMI & Cash Collection',
+    id: 'emi-cash-collection',
+    description: 'Collect loan EMIs and other cash payments for various financial institutions.',
+    icon: <HandCoins className="text-emerald-600" />,
+    color: 'bg-emerald-50'
+  },
+  {
+    title: 'Digital Gold Selling',
+    id: 'digital-gold-selling',
+    description: 'Offer 24K pure digital gold to your customers with safe storage.',
+    icon: <Coins className="text-yellow-600" />,
+    color: 'bg-yellow-50'
+  },
+  {
+    title: 'Bus Ticketing Agent Services',
+    id: 'bus-ticketing-agent-services',
+    description: 'Book bus tickets for all major routes across India with high margins.',
+    icon: <Bus className="text-rose-600" />,
+    color: 'bg-rose-50'
+  },
+  {
+    title: 'Gift Card Selling',
+    id: 'gift-card-selling',
+    description: 'Sell gift cards for popular brands like Amazon, Flipkart, and more.',
+    icon: <Gift className="text-pink-600" />,
+    color: 'bg-pink-50'
   }
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="pt-24 pb-12 bg-slate-50/50">
+    <section id="services" className="pt-24 pb-0 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.div 
@@ -109,7 +137,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}

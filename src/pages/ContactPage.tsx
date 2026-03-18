@@ -31,7 +31,7 @@ const ContactPage = () => {
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 mb-0.5">Our Office</h3>
                   <p className="text-slate-600 text-xs leading-relaxed font-medium">Bharat Mitra Innovations Pvt Ltd.</p>
-                  <p className="text-slate-50 text-[11px] leading-relaxed text-slate-500">
+                  <p className="text-slate-500 text-[11px] leading-relaxed">
                     No 8 Crs Chalapathi Raju Layout<br />
                     Doddabasapur K Puram<br />
                     Bengaluru Karnataka 560036

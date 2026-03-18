@@ -6,15 +6,15 @@ import {
   CreditCard, 
   Smartphone, 
   ShieldCheck, 
-  Plane, 
-  Receipt, 
-  Wallet, 
-  Building2,
-  Umbrella,
+  Train, 
+  ReceiptText, 
+  Bus,
   Zap,
-  CreditCard as CardIcon,
-  QrCode,
-  FileText,
+  IdCard,
+  HandCoins,
+  Coins,
+  Gift,
+  Send,
   Globe
 } from 'lucide-react';
 
@@ -31,35 +31,35 @@ const allServices = [
     title: 'Aadhaar ATM Services',
     id: 'aadhaar-atm-services',
     description: 'Offer basic banking functions to customers using their Aadhaar card.',
-    icon: <CreditCard className="text-purple-600" />,
+    icon: <Fingerprint className="text-purple-600" />,
     color: 'bg-purple-50'
   },
   {
     title: 'Micro ATM Machine Services',
     id: 'micro-atm-machine-services',
     description: 'Accept debit card transactions for cash withdrawals and balance inquiries.',
-    icon: <Smartphone className="text-green-600" />,
+    icon: <CreditCard className="text-green-600" />,
     color: 'bg-green-50'
   },
   {
     title: 'Money Transfer Services',
     id: 'money-transfer-services',
     description: 'Secure, fast, and reliable way to send money across India instantly.',
-    icon: <Wallet className="text-orange-600" />,
+    icon: <Send className="text-orange-600" />,
     color: 'bg-orange-50'
   },
   {
     title: 'EMI & Cash Collection',
     id: 'emi-cash-collection',
     description: 'Act as a collection point for various financial institutions and NBFCs.',
-    icon: <Receipt className="text-indigo-600" />,
+    icon: <HandCoins className="text-indigo-600" />,
     color: 'bg-indigo-50'
   },
   {
     title: 'Digital Gold Selling',
     id: 'digital-gold-selling',
     description: 'Offer Digital Gold to your customers in small denominations.',
-    icon: <Zap className="text-yellow-600" />,
+    icon: <Coins className="text-yellow-600" />,
     color: 'bg-yellow-50'
   },
   // Recharge & Utility Services
@@ -67,7 +67,7 @@ const allServices = [
     title: 'Utility Bill Payments',
     id: 'utility-bill-payments',
     description: 'One-stop solution for all utility bill payments including electricity and water.',
-    icon: <Receipt className="text-sky-600" />,
+    icon: <ReceiptText className="text-sky-600" />,
     color: 'bg-sky-50'
   },
   {
@@ -82,14 +82,14 @@ const allServices = [
     title: 'IRCTC Agent Registration',
     id: 'irctc-agent-registration',
     description: 'Become an authorized IRCTC agent and offer official railway ticket booking.',
-    icon: <Plane className="text-red-600" />,
+    icon: <Train className="text-red-600" />,
     color: 'bg-red-50'
   },
   {
     title: 'Bus Ticketing Agent Services',
     id: 'bus-ticketing-agent-services',
     description: 'Book bus tickets for thousands of routes across India.',
-    icon: <Globe className="text-cyan-600" />,
+    icon: <Bus className="text-cyan-600" />,
     color: 'bg-cyan-50'
   },
   // Business & Agency Opportunities
@@ -97,21 +97,21 @@ const allServices = [
     title: 'Insurance Agent Registration',
     id: 'insurance-agent-registration',
     description: 'Become a certified Point of Sales Person (POSP) for insurance.',
-    icon: <Umbrella className="text-rose-600" />,
+    icon: <ShieldCheck className="text-rose-600" />,
     color: 'bg-rose-50'
   },
   {
     title: 'Gift Card Selling',
     id: 'gift-card-selling',
     description: 'Sell digital gift cards and vouchers for popular e-commerce platforms.',
-    icon: <CreditCard className="text-teal-600" />,
+    icon: <Gift className="text-teal-600" />,
     color: 'bg-teal-50'
   },
   {
     title: 'PAN Card Agent Registration',
     id: 'pan-card-agent-registration',
     description: 'Assist customers in applying for new PAN cards or making corrections.',
-    icon: <FileText className="text-blue-600" />,
+    icon: <IdCard className="text-blue-600" />,
     color: 'bg-blue-50'
   }
 ];
