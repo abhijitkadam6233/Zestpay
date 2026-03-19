@@ -116,7 +116,11 @@ const DownloadApp = () => {
               className="relative flex items-center justify-center"
             >
               {/* Main Phone - Front */}
-              <div className="relative z-30 w-64 md:w-72 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] rounded-[3rem]">
+              <motion.div 
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="relative z-30 w-64 md:w-72 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] rounded-[3rem]"
+              >
                 <div className="bg-slate-900 rounded-[3rem] p-3 border-4 border-slate-800">
                   <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative p-4 flex items-center justify-center">
                     <img 
@@ -135,10 +139,14 @@ const DownloadApp = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Secondary Phone - Back */}
-              <div className="absolute z-20 -right-4 lg:-right-8 top-12 w-56 md:w-64 transform rotate-12 opacity-90">
+              <motion.div 
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute z-20 -right-4 lg:-right-8 top-12 w-56 md:w-64 transform rotate-12 opacity-90"
+              >
                 <div className="bg-slate-900 rounded-[2.5rem] p-2.5 shadow-2xl border-4 border-slate-800">
                   <div className="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5] relative p-4 flex items-center justify-center">
                     <img 
@@ -157,7 +165,7 @@ const DownloadApp = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
             </motion.div>
           </div>

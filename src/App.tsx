@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import MissionPage from './pages/MissionPage';
@@ -30,35 +30,39 @@ const AppContent = () => {
   return (
     <>
       <ScrollToTop />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen bg-white"
-      >
-        {!isAuthPage && <Navbar />}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/mission" element={<MissionPage />} />
-          <Route path="/vision" element={<VisionPage />} />
-          <Route path="/services" element={<AllServices />} />
-          <Route path="/services/:serviceId" element={<ServicePage />} />
-          <Route path="/income-calculator" element={<IncomeCalculator />} />
-          <Route path="/retailer" element={<RetailerPage />} />
-          <Route path="/distributor" element={<DistributorPage />} />
-          <Route path="/white-label" element={<WhiteLabelPage />} />
-          <Route path="/api-partner" element={<ApiPartnerPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-        </Routes>
-        {!isAuthPage && <Footer />}
-      </motion.div>
+      {!isAuthPage && <Navbar />}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="min-h-screen bg-white"
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/mission" element={<MissionPage />} />
+            <Route path="/vision" element={<VisionPage />} />
+            <Route path="/services" element={<AllServices />} />
+            <Route path="/services/:serviceId" element={<ServicePage />} />
+            <Route path="/income-calculator" element={<IncomeCalculator />} />
+            <Route path="/retailer" element={<RetailerPage />} />
+            <Route path="/distributor" element={<DistributorPage />} />
+            <Route path="/white-label" element={<WhiteLabelPage />} />
+            <Route path="/api-partner" element={<ApiPartnerPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
+      {!isAuthPage && <Footer />}
     </>
   );
 };
