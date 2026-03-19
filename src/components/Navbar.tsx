@@ -25,6 +25,8 @@ const Navbar = () => {
   const [showWhoWeAre, setShowWhoWeAre] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [showContact, setShowContact] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileWhoWeAreOpen, setMobileWhoWeAreOpen] = useState(false);
 
   const isSolid = scrolled || location.pathname !== '/';
 
@@ -57,9 +59,9 @@ const Navbar = () => {
     { name: 'Vision', href: '/vision' }
   ];
 
-  const navLinks = [
+  const navLinks: { name: string; to?: string; href?: string }[] = [
     { name: 'Home', to: '/' },
-    { name: 'Opportunities', href: '#opportunities' },
+    { name: 'Opportunities', to: '/#opportunities' },
     { name: 'Income Calculator', to: '/income-calculator' },
     { name: 'Contact Us', to: '/contact' },
   ];
@@ -309,7 +311,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-white border-b border-slate-100 overflow-hidden"
+            className="md:hidden bg-white border-b border-slate-100 overflow-y-auto max-h-[80vh] overscroll-contain shadow-inner"
           >
             <motion.div 
               initial="hidden"
@@ -317,7 +319,7 @@ const Navbar = () => {
               variants={{
                 visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } }
               }}
-              className="px-2 pt-2 pb-3 space-y-1 sm:px-3"
+              className="px-4 pt-2 pb-12 space-y-1"
             >
               <motion.div
                 variants={{
@@ -340,28 +342,44 @@ const Navbar = () => {
                   hidden: { opacity: 0, x: -20 },
                   visible: { opacity: 1, x: 0 }
                 }}
-                className="px-3 py-2"
+                className="py-1"
               >
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Services</p>
-                <div className="grid grid-cols-1 gap-1 pl-2">
-                  {servicesList.map((service) => (
-                    <Link
-                      key={service.id}
-                      to={`/services/${service.id}`}
-                      className="py-2 text-sm text-slate-600 hover:text-primary"
-                      onClick={() => setIsOpen(false)}
+                <button 
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="w-full flex items-center justify-between py-3 text-base font-bold text-slate-900 hover:text-primary transition-colors"
+                >
+                  <span className="flex items-center gap-2">Services</span>
+                  <ChevronDown size={18} className={`transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden pl-4 space-y-1"
                     >
-                      {service.name}
-                    </Link>
-                  ))}
-                  <Link
-                    to="/services"
-                    className="py-2 text-sm text-primary font-bold border-t border-slate-50 mt-2 pt-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    View All Services
-                  </Link>
-                </div>
+                      {servicesList.map((service) => (
+                        <Link
+                          key={service.id}
+                          to={`/services/${service.id}`}
+                          className="block py-2 text-sm text-slate-600 hover:text-primary"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                      <Link
+                        to="/services"
+                        className="block py-2 text-sm text-primary font-bold border-t border-slate-50 mt-2 pt-2"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        View All Services
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
 
               {/* Mobile Who We Are */}
@@ -370,21 +388,37 @@ const Navbar = () => {
                   hidden: { opacity: 0, x: -20 },
                   visible: { opacity: 1, x: 0 }
                 }}
-                className="px-3 py-2"
+                className="py-1"
               >
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Who We Are</p>
-                <div className="grid grid-cols-1 gap-1 pl-2">
-                  {whoWeAreList.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="py-2 text-sm text-slate-600 hover:text-primary"
-                      onClick={() => setIsOpen(false)}
+                <button 
+                  onClick={() => setMobileWhoWeAreOpen(!mobileWhoWeAreOpen)}
+                  className="w-full flex items-center justify-between py-3 text-base font-bold text-slate-900 hover:text-primary transition-colors"
+                >
+                  <span className="flex items-center gap-2">Who We Are</span>
+                  <ChevronDown size={18} className={`transition-transform duration-300 ${mobileWhoWeAreOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence>
+                  {mobileWhoWeAreOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden pl-4 space-y-1"
                     >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
+                      {whoWeAreList.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className="block py-2 text-sm text-slate-600 hover:text-primary"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
 
               {navLinks.slice(1).map((link) => (
@@ -394,11 +428,12 @@ const Navbar = () => {
                     hidden: { opacity: 0, x: -20 },
                     visible: { opacity: 1, x: 0 }
                   }}
+                  className="py-1"
                 >
                   {link.to ? (
                     <Link
                       to={link.to}
-                      className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
+                      className="block py-3 text-base font-bold text-slate-900 hover:text-primary transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}
@@ -406,7 +441,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50"
+                      className="block py-3 text-base font-bold text-slate-900 hover:text-primary transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}

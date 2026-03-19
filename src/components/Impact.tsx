@@ -63,7 +63,7 @@ const Impact = () => {
             viewport={{ once: true }}
             className="text-primary font-bold text-sm uppercase tracking-[0.3em] mb-4"
           >
-            Our Global Reach
+            Our National Reach
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
