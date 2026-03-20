@@ -3,24 +3,19 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const heroBanners = [
   {
-    local: "/hero-1.png",
-    fallback: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1920&auto=format&fit=crop"
+    local: "/hero-1.png"
   },
   {
-    local: "/hero-2.png",
-    fallback: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1920&auto=format&fit=crop"
+    local: "/hero-2.png"
   },
   {
-    local: "/hero-3.png",
-    fallback: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1920&auto=format&fit=crop"
+    local: "/hero-3.png"
   },
   {
-    local: "/hero-4.png",
-    fallback: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1920&auto=format&fit=crop"
+    local: "/hero-4.png"
   },
   {
-    local: "/hero-5.png",
-    fallback: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=1920&auto=format&fit=crop"
+    local: "/hero-5.png"
   }
 ];
 
@@ -41,9 +36,6 @@ const Hero = () => {
           <motion.img 
             key={currentSlide}
             src={heroBanners[currentSlide].local} 
-            onError={(e) => {
-              e.currentTarget.src = heroBanners[currentSlide].fallback;
-            }}
             alt={`Zestpay Banner ${currentSlide + 1}`} 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

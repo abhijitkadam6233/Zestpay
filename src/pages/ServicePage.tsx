@@ -75,9 +75,6 @@ const ServicePage = () => {
                     alt={`${serviceName} Banner`}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200&h=675";
-                    }}
                   />
                 ) : (
                   <div className="text-center p-12">

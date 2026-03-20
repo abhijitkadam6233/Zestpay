@@ -16,7 +16,6 @@ const Logo: React.FC<LogoProps> = ({ className = "", dark = false }) => {
           alt="Zestpay Logo" 
           className="h-12 md:h-16 w-auto object-contain"
           referrerPolicy="no-referrer"
-          onError={() => setError(true)}
         />
       ) : (
         <div className="flex items-center gap-2">

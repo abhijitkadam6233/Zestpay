@@ -52,9 +52,6 @@ const Partners = () => {
                 alt={partner.name} 
                 className="h-20 md:h-28 w-auto object-contain"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  e.currentTarget.src = `https://placehold.co/200x100/f8fafc/64748b?text=${partner.name}`;
-                }}
               />
             </div>
           ))}

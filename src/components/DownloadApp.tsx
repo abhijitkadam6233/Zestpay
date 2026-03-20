@@ -128,14 +128,6 @@ const DownloadApp = () => {
                       alt="Zestpay App Dashboard" 
                       className="max-w-full max-h-full object-contain"
                       loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1616077168079-7e09a677fb2c?auto=format&fit=crop&q=80&w=400&h=800";
-                        e.currentTarget.className = "w-full h-full object-cover";
-                        // Remove padding if using fallback
-                        if (e.currentTarget.parentElement) {
-                          e.currentTarget.parentElement.style.padding = '0';
-                        }
-                      }}
                     />
                   </div>
                 </div>
@@ -154,14 +146,6 @@ const DownloadApp = () => {
                       alt="Zestpay Services" 
                       className="max-w-full max-h-full object-contain"
                       loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400&h=800";
-                        e.currentTarget.className = "w-full h-full object-cover";
-                        // Remove padding if using fallback
-                        if (e.currentTarget.parentElement) {
-                          e.currentTarget.parentElement.style.padding = '0';
-                        }
-                      }}
                     />
                   </div>
                 </div>

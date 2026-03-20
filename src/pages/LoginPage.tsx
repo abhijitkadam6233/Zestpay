@@ -23,36 +23,31 @@ const banners = [
     id: 0,
     title: "Highest Commissions",
     subtitle: "Earn industry-leading commission rates and grow your business with Zestpay.",
-    image: "/login-1.png",
-    fallback: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop"
+    image: "/login-1.png"
   },
   {
     id: 1,
     title: "Lightning Fast Settlements",
     subtitle: "Get your money instantly with our real-time settlement infrastructure.",
-    image: "/login-2.png",
-    fallback: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop"
+    image: "/login-2.png"
   },
   {
     id: 2,
     title: "Bank-Grade Security",
     subtitle: "Your transactions are protected by end-to-end AES-256 encryption.",
-    image: "/login-3.png",
-    fallback: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1000&auto=format&fit=crop"
+    image: "/login-3.png"
   },
   {
     id: 3,
     title: "24/7 Dedicated Support",
     subtitle: "Our expert team is always here to help you succeed and resolve any issues.",
-    image: "/login-4.png",
-    fallback: "https://images.unsplash.com/photo-1521791136364-798a7bc0d262?q=80&w=1000&auto=format&fit=crop"
+    image: "/login-4.png"
   },
   {
     id: 4,
     title: "Expand Your Reach",
     subtitle: "Join thousands of partners across the country and scale your business effortlessly.",
-    image: "/login-5.png",
-    fallback: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop"
+    image: "/login-5.png"
   }
 ];
 
@@ -117,9 +112,6 @@ const LoginPage = () => {
             <motion.img
               key={currentBanner}
               src={banners[currentBanner].image}
-              onError={(e) => {
-                e.currentTarget.src = banners[currentBanner].fallback;
-              }}
               alt={banners[currentBanner].title}
               referrerPolicy="no-referrer"
               initial={{ opacity: 0, x: 20, scale: 1.02 }}
