@@ -14,13 +14,13 @@ const banners = [
     id: 0,
     title: "Secure Account Recovery",
     subtitle: "Quickly regain access to your Zestpay partner dashboard with our secure recovery process.",
-    image: "/auth-bg-1.png"
+    image: "/login-1.png"
   },
   {
     id: 1,
     title: "24/7 Dedicated Support",
     subtitle: "Our expert team is always here to help you succeed and resolve any issues.",
-    image: "/auth-bg-2.png"
+    image: "/login-2.png"
   }
 ];
 

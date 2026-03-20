@@ -2,7 +2,7 @@ export const servicesData: Record<string, { title: string; description: string; 
   // Financial & Banking Solutions
   'aeps-registration': {
     title: 'AEPS Registration',
-    image: '/promo-1.png',
+    image: '/banner-1.png',
     description: `AEPS (Aadhaar Enabled Payment System) Registration is the process through which retailers, business correspondents, and financial service providers enroll to offer Aadhaar-based banking services to customers. AEPS is an initiative by the National Payments Corporation of India (NPCI) that allows customers to perform basic banking transactions using their Aadhaar number and biometric authentication. It plays a vital role in promoting financial inclusion across India, especially in rural and semi-urban areas.
 
 AEPS registration enables retailers to provide essential banking services such as cash withdrawal, cash deposit, balance inquiry, mini statement, and Aadhaar to Aadhaar fund transfers. Instead of visiting a bank branch or ATM, customers can access these services at a nearby authorized AEPS outlet. This makes banking services more accessible to individuals who may not have easy access to traditional banking infrastructure.
@@ -13,7 +13,7 @@ A biometric device is an essential requirement for AEPS operations. Since transa
   },
   'aadhaar-atm-services': {
     title: 'Aadhaar ATM Services',
-    image: '/promo-2.png',
+    image: '/banner-2.png',
     description: `Zestpay AEPS enables customers to perform banking transactions using Aadhaar credentials and biometric authentication. The service allows cash withdrawals, balance checks, mini statement generation, and fund transfers between Aadhaar-linked accounts, ensuring convenience for users without ATM cards or bank branches.
 
 Retailers offering AEPS earn the highest margins in the industry, benefiting from a profitable revenue stream while providing vital banking services. The platform is designed for ease of use, security, and regulatory compliance, ensuring transactions are instant, encrypted, and transparent. Automated reporting and settlement features simplify retailer operations, reducing manual reconciliation.
@@ -26,7 +26,7 @@ Zestpay AEPS is not just a service; it’s a tool for financial empowerment, bri
   },
   'micro-atm-machine-services': {
     title: 'Micro ATM Machine Services',
-    image: '/promo-3.png',
+    image: '/banner-3.png',
     description: `Zestpay Micro ATM (MATM) offers a portable banking solution enabling customers to perform cash withdrawals, balance checks, and mini statement generation at retail points. Designed to provide banking services in areas with limited ATM or bank branch access, MATM enhances financial inclusion while ensuring convenience for users.
 
 Retailers offering MATM services earn the highest margin in the industry, creating an additional revenue stream. The device is simple to operate, with biometric authentication and encrypted transactions ensuring secure and reliable operations. Customers receive instant confirmations and real-time updates for every transaction.
@@ -39,7 +39,7 @@ Overall, Zestpay MATM combines operational efficiency, profitability, technology
   },
   'money-transfer-services': {
     title: 'Money Transfer Services',
-    image: '/promo-4.png',
+    image: '/banner-4.png',
     description: `Zestpay’s Domestic Money Transfer (DMT) service provides a secure, fast, and reliable way for customers to send money across India. The platform supports multiple channels, including IMPS, NEFT, and RTGS, ensuring instant transfer and confirmation through SMS and email notifications. Customers can use mobile numbers or verified bank account details for sending funds, providing convenience, accessibility, and reducing the need to visit physical bank branches.
 
 Retailers offering DMT earn the highest margin in the industry, making it a profitable addition to their business operations. The platform offers a user-friendly interface, detailed transaction reports, and automated reconciliation tools, enabling retailers to manage multiple transactions efficiently. Security is a key focus, with encrypted transactions, two-factor authentication, and fraud monitoring ensuring every transfer is safe and reliable.
@@ -50,7 +50,7 @@ Integration with other Zestpay services, such as mobile recharge, bill payments,
   },
   'emi-cash-collection': {
     title: 'EMI & Cash Collection',
-    image: '/promo-5.png',
+    image: '/banner-5.png',
     description: `EMI & Cash Collection services provide customers with a simple, secure, and convenient way to repay loans and other financial commitments. In India, many individuals rely on Equated Monthly Installments (EMIs) for personal loans, consumer durable financing, vehicle loans, microfinance, and small business funding. This service ensures that customers can make their repayments on time without visiting bank branches or lender offices.
 
 Through authorized retailers and collection partners, customers can pay EMIs in cash or via digital payment modes. Once the transaction is completed, they receive instant confirmation through SMS or a printed receipt, ensuring transparency and trust. The system updates payments in real time, reducing delays and maintaining accurate records for both customers and financial institutions.
@@ -65,7 +65,7 @@ Overall, EMI & Cash Collection services support financial discipline, improve re
   },
   'digital-gold-selling': {
     title: 'Digital Gold Selling',
-    image: '/promo-6.png',
+    image: '/banner-6.png',
     description: `Digital Gold Selling is a modern and secure way for customers to buy, sell, and accumulate gold online in small or large quantities. This service allows individuals to invest in 24K pure gold without the need to physically store it. Customers can purchase gold starting from a very small amount, making it affordable and accessible to everyone, including first-time investors and small savers.
 
 Through a trusted digital platform, customers can buy gold at live market prices with complete price transparency. Once purchased, the gold is securely stored in insured vaults managed by authorized custodians. Customers receive instant confirmation of their transaction via SMS or email, along with a digital statement reflecting their holdings. At any time, they can choose to sell their gold based on the current market rate or request physical delivery in the form of coins or bars.
@@ -82,7 +82,7 @@ Overall, Digital Gold Selling combines tradition with technology, enabling safe,
   // Recharge & Utility Services
   'utility-bill-payments': {
     title: 'Utility Bill Payments',
-    image: '/promo-7.png',
+    image: '/banner-7.png',
     description: `Zestpay BBPS is a unified platform allowing customers to pay all their utility bills, including electricity, water, gas, broadband, and more, from a single interface. The service provides instant confirmation of payment, real-time updates, and supports multiple payment modes such as UPI, wallets, cards, and net banking. Retailers offering BBPS earn the highest margin in the industry, making it a profitable service for both urban and rural communities.
 
 The platform emphasizes reliability, transparency, and operational efficiency. Automated receipts, detailed transaction records, and easy reconciliation help retailers manage accounts effortlessly while providing clear proof of payment to customers. Customers benefit from the convenience of timely bill payments, eliminating the need to visit multiple offices or rely on cash-based systems. BBPS reduces the risk of late payments, streamlines financial management, and encourages digital adoption among users.
@@ -93,7 +93,7 @@ Zestpay BBPS generates revenue while strengthening the relationship between reta
   },
   'mobile-dth-recharge': {
     title: 'Mobile & DTH Recharge',
-    image: '/promo-8.png',
+    image: '/banner-8.png',
     description: `Zestpay offers a reliable platform for mobile and DTH recharge across all major operators. Customers receive instant recharge, transparent billing, and access to special offers and plans.
 
 Retailers offering recharge services earn the highest margin in the industry, while increasing footfall and repeat business. The platform supports multiple payment modes, automated receipts, and easy reconciliation. Customers enjoy convenience, speed, and reliability.
@@ -106,7 +106,7 @@ Zestpay Mobile and DTH Recharge enhances digital adoption, customer satisfaction
   // Travel & Ticketing Services
   'irctc-agent-registration': {
     title: 'IRCTC Agent Registration',
-    image: '/promo-9.png',
+    image: '/banner-9.png',
     description: `IRCTC Agent Registration allows individuals and businesses to become authorized railway ticket booking agents through the official platform of Indian Railway Catering and Tourism Corporation (IRCTC). As the online ticketing arm of Indian Railways, IRCTC enables agents to book train tickets legally on behalf of customers and earn commissions on every confirmed booking.
 
 Becoming an IRCTC authorized agent is an excellent business opportunity, especially for travel agencies, CSC operators, and retail outlets in urban as well as rural areas. Agents can book e-tickets for customers, provide seat availability information, check PNR status, and offer complete travel assistance. This service increases customer footfall and adds a reliable revenue stream to an existing business.
@@ -123,7 +123,7 @@ Overall, IRCTC Agent Registration empowers entrepreneurs to participate in India
   },
   'bus-ticketing-agent-services': {
     title: 'Bus Ticketing Agent Services',
-    image: '/promo-10.png',
+    image: '/banner-10.png',
     description: `Bus Ticketing Agent Services provide a convenient and reliable way for customers to book bus tickets through authorized retail outlets or travel agents. With increasing demand for intercity and interstate travel across India, bus ticketing has become an essential service, especially in areas where online booking access is limited. Agents act as a bridge between passengers and bus operators, offering quick and hassle-free ticket booking solutions.
 
 Through a digital booking platform integrated with multiple private and government bus operators, agents can check real-time seat availability, compare fares, select preferred boarding points, and confirm bookings instantly. Customers receive immediate confirmation via SMS or printed tickets, ensuring transparency and trust in every transaction. The system also allows easy ticket cancellation and rescheduling as per operator policies.
@@ -140,7 +140,7 @@ Overall, Bus Ticketing Agent Services combine technology, convenience, and earni
   // Business & Agency Opportunities
   'insurance-agent-registration': {
     title: 'Insurance Agent / Advisor Registration',
-    image: '/promo-11.png',
+    image: '/banner-11.png',
     description: `Insurance Agent / Advisor Registration is the process through which individuals or businesses become authorized to sell insurance policies and provide financial protection solutions to customers. By registering as an insurance agent or advisor, a person can represent insurance companies, guide clients in choosing suitable policies, and earn commissions on policy sales and renewals.
 
 In India, insurance agents must comply with regulations set by the Insurance Regulatory and Development Authority of India (IRDAI). The registration process typically involves completing mandatory training hours, passing the required certification examination, and submitting KYC documents such as Aadhaar card, PAN card, address proof, educational qualification certificates, and bank account details. Once approved, the agent receives a valid license to sell insurance products legally.
@@ -155,7 +155,7 @@ Overall, Insurance Agent / Advisor Registration empowers individuals to become t
   },
   'gift-card-selling': {
     title: 'Gift Card Selling',
-    image: '/promo-12.png',
+    image: '/banner-12.png',
     description: `Gift Card Selling is a fast-growing digital service that allows customers to purchase prepaid gift vouchers for personal use or gifting purposes. Gift cards are available for a wide range of categories, including shopping, entertainment, food, travel, gaming, and online subscriptions. They offer a convenient and flexible gifting solution, eliminating the need to select specific products while giving recipients the freedom to choose what they truly want.
 
 Through a digital platform, retailers and agents can sell gift cards from leading brands across India. Customers can select the brand, choose the desired amount, and complete the purchase instantly. Once the transaction is successful, the gift card code or voucher details are delivered via SMS or email, ensuring immediate access and usability. This makes gift cards an ideal option for birthdays, festivals, corporate rewards, employee incentives, and special occasions.
@@ -170,7 +170,7 @@ Overall, Gift Card Selling combines convenience, flexibility, and profitability.
   },
   'pan-card-agent-registration': {
     title: 'PAN Card Agent Registration',
-    image: '/promo-13.png',
+    image: '/banner-13.png',
     description: `PAN Card Agent Registration allows individuals, retailers, and service providers to become authorized agents for processing Permanent Account Number (PAN) card applications. A PAN card is issued by the Income Tax Department under the Government of India and is mandatory for financial transactions, tax filing, bank account opening, and various compliance requirements. By becoming a registered PAN agent, businesses can assist customers in applying for new PAN cards, corrections, reprints, and updates.
 
 The registration process generally involves submitting KYC documents such as Aadhaar card, PAN card, address proof, business details, and bank account information. Agents must comply with verification and onboarding procedures set by authorized PAN service providers working with the Income Tax Department. Once approved, the agent receives login credentials to access an online portal for submitting and tracking applications.
