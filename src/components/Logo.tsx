@@ -12,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", dark = false }) => {
     <div className={`flex items-center justify-center ${className}`}>
       {!error ? (
         <img 
-          src="/logo.png" 
+          src="/brand-mark.png" 
           alt="Zestpay Logo" 
           className="h-12 md:h-16 w-auto object-contain"
           referrerPolicy="no-referrer"

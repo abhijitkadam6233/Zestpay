@@ -3,19 +3,19 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const heroBanners = [
   {
-    local: "/hero-1.png"
+    local: "/showcase-1.png"
   },
   {
-    local: "/hero-2.png"
+    local: "/showcase-2.png"
   },
   {
-    local: "/hero-3.png"
+    local: "/showcase-3.png"
   },
   {
-    local: "/hero-4.png"
+    local: "/showcase-4.png"
   },
   {
-    local: "/hero-5.png"
+    local: "/showcase-5.png"
   }
 ];
 

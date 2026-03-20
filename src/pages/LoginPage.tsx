@@ -23,31 +23,31 @@ const banners = [
     id: 0,
     title: "Highest Commissions",
     subtitle: "Earn industry-leading commission rates and grow your business with Zestpay.",
-    image: "/login-1.png"
+    image: "/auth-bg-1.png"
   },
   {
     id: 1,
     title: "Lightning Fast Settlements",
     subtitle: "Get your money instantly with our real-time settlement infrastructure.",
-    image: "/login-2.png"
+    image: "/auth-bg-2.png"
   },
   {
     id: 2,
     title: "Bank-Grade Security",
     subtitle: "Your transactions are protected by end-to-end AES-256 encryption.",
-    image: "/login-3.png"
+    image: "/auth-bg-3.png"
   },
   {
     id: 3,
     title: "24/7 Dedicated Support",
     subtitle: "Our expert team is always here to help you succeed and resolve any issues.",
-    image: "/login-4.png"
+    image: "/auth-bg-4.png"
   },
   {
     id: 4,
     title: "Expand Your Reach",
     subtitle: "Join thousands of partners across the country and scale your business effortlessly.",
-    image: "/login-5.png"
+    image: "/auth-bg-5.png"
   }
 ];
 
