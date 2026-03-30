@@ -17,6 +17,13 @@ const Partners = () => {
 
   // Triple the list to ensure a long enough strip for the loop
   const allPartners = [...partners, ...partners, ...partners];
+  const getImageUrl = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    if (path.startsWith('http')) return path;
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${cleanBase}${cleanPath}`;
+  };
 
   return (
     <section className="relative pt-8 pb-16 bg-white overflow-hidden border-y border-slate-100">
@@ -27,7 +34,7 @@ const Partners = () => {
         </div>
       </div>
       
-      <div className="relative flex overflow-hidden h-48 items-center">
+      <div className="relative flex overflow-hidden h-32 md:h-48 items-center">
         <motion.div 
           className="flex whitespace-nowrap items-center"
           animate={{
@@ -37,7 +44,7 @@ const Partners = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 25,
+              duration: 30,
               ease: "linear",
             },
           }}
@@ -45,13 +52,12 @@ const Partners = () => {
           {allPartners.map((partner, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 flex items-center justify-center px-8 md:px-12"
+              className="flex-shrink-0 flex items-center justify-center px-6 md:px-12"
             >
               <img 
-                src={partner.logo} 
+                src={getImageUrl(partner.logo)} 
                 alt={partner.name} 
-                className="h-20 md:h-28 w-auto object-contain"
-                referrerPolicy="no-referrer"
+                className="h-12 md:h-24 w-auto object-contain transition-all duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
               />
             </div>
           ))}

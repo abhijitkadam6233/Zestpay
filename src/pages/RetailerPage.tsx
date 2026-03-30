@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Store, CheckCircle, TrendingUp, Shield } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const RetailerPage = () => {
   return (
@@ -10,6 +11,11 @@ const RetailerPage = () => {
       exit={{ opacity: 0 }}
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
+      <SEO 
+        title="Become a Retailer" 
+        description="Join Zestpay as a retailer and transform your shop into a digital banking hub. Earn high commissions on AEPS, Money Transfer, and Bill Payments."
+        keywords="Zestpay retailer, shop banking hub, earn commission, AEPS retailer, money transfer agent"
+      />
       <div className="bg-slate-900 py-20 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Become a Zestpay Retailer</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">

@@ -5,22 +5,30 @@ import {
   User, 
   ArrowRight,
   ArrowLeft,
-  Hexagon,
   CheckCircle2
 } from 'lucide-react';
+import Logo from '../components/Logo';
 
 const banners = [
   {
     id: 0,
-    title: "Secure Account Recovery",
-    subtitle: "Quickly regain access to your Zestpay partner dashboard with our secure recovery process.",
-    image: "/login-1.png"
+    image: "/auth-bg-1.png"
   },
   {
     id: 1,
-    title: "24/7 Dedicated Support",
-    subtitle: "Our expert team is always here to help you succeed and resolve any issues.",
-    image: "/login-2.png"
+    image: "/auth-bg-2.png"
+  },
+  {
+    id: 2,
+    image: "/auth-bg-3.png"
+  },
+  {
+    id: 3,
+    image: "/auth-bg-4.png"
+  },
+  {
+    id: 4,
+    image: "/auth-bg-5.png"
   }
 ];
 
@@ -29,6 +37,13 @@ const ForgotPasswordPage = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [currentBanner, setCurrentBanner] = useState(0);
   const [identifier, setIdentifier] = useState('');
+  const getImageUrl = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    if (path.startsWith('http')) return path;
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${cleanBase}${cleanPath}`;
+  };
 
   // Auto-slide banners
   useEffect(() => {
@@ -65,63 +80,36 @@ const ForgotPasswordPage = () => {
     <div className="min-h-screen flex w-full bg-white font-sans selection:bg-brand/20 selection:text-brand">
       
       {/* Left Side: Banner Slider (Hidden on Mobile) */}
-      <div className="hidden lg:flex w-1/2 relative overflow-hidden bg-slate-900">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={currentBanner}
-            src={banners[currentBanner].image}
-            alt={banners[currentBanner].title}
-            referrerPolicy="no-referrer"
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-        </AnimatePresence>
+      <div className="hidden lg:flex w-1/2 relative overflow-hidden bg-slate-50 px-12 pb-12 pt-6 xl:px-20 xl:pb-20 xl:pt-10">
+        <div className="relative w-full h-full">
+          <AnimatePresence initial={false}>
+            <motion.img
+              key={currentBanner}
+              src={getImageUrl(banners[currentBanner].image)}
+              alt="Zestpay Banner"
+              referrerPolicy="no-referrer"
+              initial={{ opacity: 0, x: 20, scale: 1.02 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -20, scale: 0.98 }}
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.4, 0, 0.2, 1] 
+              }}
+              className="absolute inset-0 w-full h-full object-contain object-top drop-shadow-2xl"
+            />
+          </AnimatePresence>
+        </div>
 
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-brand/10 mix-blend-overlay"></div>
-
-        {/* Banner Content */}
-        <div className="relative z-10 flex flex-col justify-end w-full h-full p-16 pb-24">
-          <div className="mb-auto pt-8">
-            <Link to="/" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity w-fit">
-              <div className="w-10 h-10 bg-brand rounded-xl flex items-center justify-center shadow-lg shadow-brand/20">
-                <Hexagon size={24} strokeWidth={2.5} className="text-white" />
-              </div>
-              <span className="text-2xl font-bold tracking-tight">Zestpay</span>
-            </Link>
-          </div>
-
-          <div className="max-w-lg">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentBanner}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h2 className="text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
-                  {banners[currentBanner].title}
-                </h2>
-                <p className="text-lg text-slate-300 font-medium leading-relaxed">
-                  {banners[currentBanner].subtitle}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
+        {/* Banner Content (Indicators only) */}
+        <div className="absolute inset-0 z-10 flex flex-col justify-end w-full h-full p-16 pb-12 pointer-events-none">
           {/* Slider Indicators */}
-          <div className="flex gap-3 mt-12">
+          <div className="flex gap-3 justify-center pointer-events-auto">
             {banners.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentBanner(index)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  currentBanner === index ? 'w-8 bg-brand' : 'w-2 bg-white/30 hover:bg-white/50'
+                  currentBanner === index ? 'w-8 bg-brand' : 'w-2 bg-slate-300 hover:bg-slate-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -133,13 +121,10 @@ const ForgotPasswordPage = () => {
       {/* Right Side: Form Area */}
       <div className="w-full lg:w-1/2 flex flex-col px-6 py-12 sm:px-12 md:px-20 xl:px-32 relative z-10 overflow-y-auto bg-white">
         
-        {/* Mobile Logo */}
-        <div className="lg:hidden mb-12 flex items-center gap-2">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-brand rounded-xl flex items-center justify-center shadow-sm">
-              <Hexagon size={24} strokeWidth={2.5} className="text-white" />
-            </div>
-            <span className="text-2xl font-bold text-slate-900 tracking-tight">Zestpay</span>
+        {/* Logo */}
+        <div className="mb-12">
+          <Link to="/" className="flex items-center">
+            <Logo className="scale-90 origin-left" />
           </Link>
         </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Users, Building, Briefcase, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const DistributorPage = () => {
   return (
@@ -10,6 +11,11 @@ const DistributorPage = () => {
       exit={{ opacity: 0 }}
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
+      <SEO 
+        title="Become a Distributor" 
+        description="Build your own network of retailers with Zestpay and earn passive income on every transaction. Scalable business model with high earning potential."
+        keywords="Zestpay distributor, business network, passive income, fintech distributor, retailer network"
+      />
       <div className="bg-slate-900 py-20 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Become a Zestpay Distributor</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">

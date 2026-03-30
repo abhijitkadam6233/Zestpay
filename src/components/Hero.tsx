@@ -2,25 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const heroBanners = [
-  {
-    local: "/hero-1.png"
-  },
-  {
-    local: "/hero-2.png"
-  },
-  {
-    local: "/hero-3.png"
-  },
-  {
-    local: "/hero-4.png"
-  },
-  {
-    local: "/hero-5.png"
-  }
+  { local: "hero-1.png.png" },
+  { local: "hero-2.png.png" },
+  { local: "hero-3.png.png" },
+  { local: "hero-4.png.png" },
+  { local: "hero-5.png.png" }
 ];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const getImageUrl = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    if (path.startsWith('http')) return path;
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${cleanBase}${cleanPath}`;
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -30,12 +28,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full pt-20 bg-slate-50">
-      <div className="relative w-full overflow-hidden aspect-[1920/550] md:max-h-[550px] bg-slate-900">
-        <AnimatePresence initial={false} mode="wait">
+    <section className="relative w-full bg-white pt-20 md:pt-24">
+      <div className="relative w-full overflow-hidden bg-white grid">
+        <AnimatePresence initial={false}>
           <motion.img 
             key={currentSlide}
-            src={heroBanners[currentSlide].local} 
+            src={getImageUrl(heroBanners[currentSlide].local)} 
             alt={`Zestpay Banner ${currentSlide + 1}`} 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,8 +42,7 @@ const Hero = () => {
               duration: 0.8,
               ease: "linear"
             }}
-            className="absolute top-0 left-0 w-full h-full object-cover"
-            referrerPolicy="no-referrer"
+            className="w-full h-auto col-start-1 row-start-1 object-contain"
           />
         </AnimatePresence>
         

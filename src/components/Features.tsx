@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import { 
   Users, 
   History, 
@@ -11,65 +12,67 @@ import {
   Zap
 } from 'lucide-react';
 
-const stats = [
-  { 
-    icon: <History />, 
-    label: 'Industry Experience', 
-    value: '10+', 
-    sublabel: 'YEARS OF EXCELLENCE',
-    color: 'text-blue-600',
-    bg: 'bg-blue-50'
-  },
-  { 
-    icon: <Users />, 
-    label: 'Active Users', 
-    value: '50,000+', 
-    sublabel: 'TRUSTED PARTNERS',
-    color: 'text-emerald-600',
-    bg: 'bg-emerald-50'
-  },
-  { 
-    icon: <TrendingUp />, 
-    label: 'Highest Commission', 
-    value: '₹12', 
-    sublabel: 'PER TRANSACTION',
-    color: 'text-orange-600',
-    bg: 'bg-orange-50'
-  },
-  { 
-    icon: <ShieldCheck />, 
-    label: 'Secure Platform', 
-    value: '100%', 
-    sublabel: 'BANK-GRADE SECURITY',
-    color: 'text-indigo-600',
-    bg: 'bg-indigo-50'
-  },
-];
-
-const features = [
-  {
-    title: '0 Joining Fee',
-    description: 'Start your digital banking business with zero upfront investment. Free registration for retailers.',
-    icon: <Wallet className="text-slate-900" />
-  },
-  {
-    title: 'Dual Wallet',
-    description: 'Manage all services from a dual wallet. No need to maintain multiple balances.',
-    icon: <Zap className="text-slate-900" />
-  },
-  {
-    title: '24/7 Support',
-    description: 'Dedicated support team to help you with any queries or technical issues anytime.',
-    icon: <Headphones className="text-slate-900" />
-  },
-  {
-    title: 'User-Friendly App',
-    description: 'Easy to use mobile application and web portal for seamless transactions.',
-    icon: <Smartphone className="text-slate-900" />
-  }
-];
-
 const Features = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { 
+      icon: <History />, 
+      label: t('Industry Experience'), 
+      value: '10+', 
+      sublabel: t('YEARS OF EXCELLENCE'),
+      color: 'text-blue-600',
+      bg: 'bg-blue-50'
+    },
+    { 
+      icon: <Users />, 
+      label: t('Active Users'), 
+      value: '50,000+', 
+      sublabel: t('TRUSTED PARTNERS'),
+      color: 'text-emerald-600',
+      bg: 'bg-emerald-50'
+    },
+    { 
+      icon: <TrendingUp />, 
+      label: t('Highest Commission'), 
+      value: '₹12', 
+      sublabel: t('PER TRANSACTION'),
+      color: 'text-orange-600',
+      bg: 'bg-orange-50'
+    },
+    { 
+      icon: <ShieldCheck />, 
+      label: t('Secure Platform'), 
+      value: '100%', 
+      sublabel: t('BANK-GRADE SECURITY'),
+      color: 'text-indigo-600',
+      bg: 'bg-indigo-50'
+    },
+  ];
+
+  const features = [
+    {
+      title: t('0 Joining Fee'),
+      description: t('Start your digital banking business with zero upfront investment. Free registration for retailers.'),
+      icon: <Wallet className="text-slate-900" />
+    },
+    {
+      title: t('Dual Wallet'),
+      description: t('Manage all services from a dual wallet. No need to maintain multiple balances.'),
+      icon: <Zap className="text-slate-900" />
+    },
+    {
+      title: t('24/7 Support'),
+      description: t('Dedicated support team to help you with any queries or technical issues anytime.'),
+      icon: <Headphones className="text-slate-900" />
+    },
+    {
+      title: t('User-Friendly App'),
+      description: t('Easy to use mobile application and web portal for seamless transactions.'),
+      icon: <Smartphone className="text-slate-900" />
+    }
+  ];
+
   return (
     <section className="pt-8 pb-0 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,13 +83,13 @@ const Features = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-brand font-bold text-xs uppercase tracking-[0.2em] mb-4">WHY ZESTPAY</div>
+            <div className="text-brand font-bold text-xs uppercase tracking-[0.2em] mb-4">{t('WHY ZESTPAY')}</div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-[1.1]">
-              Empowering Local <br />
-              <span className="text-brand">Entrepreneurs</span>
+              {t('Empowering Local')} <br />
+              <span className="text-brand">{t('Entrepreneurs')}</span>
             </h2>
             <p className="text-lg text-slate-500 mb-12 leading-relaxed max-w-xl">
-              Zestpay is India's leading digital banking and bill payment platform, helping local retail stores transform into digital hubs. With over 14 years of experience, we provide a secure and reliable ecosystem for financial services.
+              {t("Zestpay is India's leading digital banking and bill payment platform, helping local retail stores transform into digital hubs. With over 14 years of experience, we provide a secure and reliable ecosystem for financial services.")}
             </p>
             
             <div className="space-y-10">

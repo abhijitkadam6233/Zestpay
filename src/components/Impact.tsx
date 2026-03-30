@@ -85,7 +85,7 @@ const Impact = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -95,11 +95,11 @@ const Impact = () => {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="bg-white border border-slate-200 p-6 md:p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1">
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2 tracking-tighter">
+              <div className="bg-white border border-slate-200 p-4 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-1 sm:mb-2 tracking-tighter">
                   <Counter value={stat.target} suffix={stat.suffix} />
                 </div>
-                <div className="text-slate-500 font-bold text-[10px] md:text-xs uppercase tracking-[0.25em] group-hover:text-primary transition-colors">
+                <div className="text-slate-500 font-bold text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] group-hover:text-primary transition-colors">
                   {stat.label}
                 </div>
               </div>

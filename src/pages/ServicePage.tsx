@@ -14,6 +14,13 @@ const ServicePage = () => {
   };
 
   const serviceName = currentService.title;
+  const getImageUrl = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    if (path.startsWith('http')) return path;
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${cleanBase}${cleanPath}`;
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,10 +78,9 @@ const ServicePage = () => {
               <div className="aspect-[16/10] bg-blue-50 rounded-2xl overflow-hidden border border-blue-100 flex items-center justify-center">
                 {currentService.image ? (
                   <img 
-                    src={currentService.image} 
+                    src={getImageUrl(currentService.image)} 
                     alt={`${serviceName} Banner`}
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <div className="text-center p-12">

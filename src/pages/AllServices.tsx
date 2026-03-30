@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 import { 
   Fingerprint, 
   CreditCard, 
@@ -123,6 +124,11 @@ const AllServices = () => {
 
   return (
     <div className="pt-24 pb-20 bg-slate-50 min-h-screen">
+      <SEO 
+        title="Our Services" 
+        description="Explore Zestpay's comprehensive range of services including AEPS, Micro ATM, Money Transfer, Bill Payments, and IRCTC registration."
+        keywords="Zestpay services, AEPS registration, Micro ATM, money transfer India, bill payments, IRCTC agent"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h1 

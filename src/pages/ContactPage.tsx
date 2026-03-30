@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import FAQ from '../components/FAQ';
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
   return (
@@ -10,6 +12,11 @@ const ContactPage = () => {
       exit={{ opacity: 0 }}
       className="pt-16 pb-16 bg-slate-50 min-h-screen"
     >
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Zestpay support for any queries regarding our services or partnership opportunities. We are here to help you."
+        keywords="Zestpay contact, support, customer care, partnership inquiry, fintech help"
+      />
       <div className="bg-[#0B1120] py-16 text-center px-4">
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Contact Us</h1>
         <p className="text-base text-slate-300 max-w-2xl mx-auto">
@@ -77,36 +84,36 @@ const ContactPage = () => {
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
             <h2 className="text-xl font-bold text-slate-900 mb-6">Send Us a Message</h2>
             
-            <form className="space-y-4">
+            <form action="https://formspree.io/f/mqegpbel" method="POST" className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">First Name</label>
-                  <input type="text" id="firstName" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="John" />
+                  <input type="text" id="firstName" name="firstName" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="John" required />
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Last Name</label>
-                  <input type="text" id="lastName" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="Doe" />
+                  <input type="text" id="lastName" name="lastName" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="Doe" required />
                 </div>
               </div>
               
               <div>
                 <label htmlFor="email" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Email Address</label>
-                <input type="email" id="email" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="john@example.com" />
+                <input type="email" id="email" name="email" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="john@example.com" required />
               </div>
               
               <div>
                 <label htmlFor="phone" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Phone Number</label>
-                <input type="tel" id="phone" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="+91 98765 43210" />
+                <input type="tel" id="phone" name="phone" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-xs" placeholder="+91 98765 43210" required />
               </div>
               
               <div>
                 <label htmlFor="subject" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Subject</label>
                 <div className="relative">
-                  <select id="subject" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-xs appearance-none">
-                    <option>General Inquiry</option>
-                    <option>Partnership</option>
-                    <option>Support</option>
-                    <option>Feedback</option>
+                  <select id="subject" name="subject" className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-xs appearance-none">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Support">Support</option>
+                    <option value="Feedback">Feedback</option>
                   </select>
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
                     <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -116,7 +123,7 @@ const ContactPage = () => {
               
               <div>
                 <label htmlFor="message" className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Message</label>
-                <textarea id="message" rows={3} className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none text-xs" placeholder="How can we help you?"></textarea>
+                <textarea id="message" name="message" rows={3} className="w-full px-3 py-2.5 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none text-xs" placeholder="How can we help you?" required></textarea>
               </div>
               
               <button type="submit" className="w-full bg-[#0056D2] hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors shadow-lg shadow-blue-900/20 text-sm">
@@ -126,6 +133,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+      <FAQ />
     </motion.div>
   );
 };

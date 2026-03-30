@@ -22,6 +22,7 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const AppContent = () => {
   const location = useLocation();
@@ -63,6 +64,7 @@ const AppContent = () => {
         </motion.div>
       </AnimatePresence>
       {!isAuthPage && <Footer />}
+      <ScrollToTopButton />
     </>
   );
 };

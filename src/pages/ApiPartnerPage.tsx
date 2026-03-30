@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Terminal, Database, Cpu, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const ApiPartnerPage = () => {
   return (
@@ -10,6 +11,11 @@ const ApiPartnerPage = () => {
       exit={{ opacity: 0 }}
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
+      <SEO 
+        title="API Partner" 
+        description="Integrate Zestpay's powerful financial APIs into your own applications. Secure, scalable, and easy-to-integrate AEPS and Money Transfer APIs."
+        keywords="Zestpay API, fintech API, AEPS API, money transfer API, developer portal, banking integration"
+      />
       <div className="bg-slate-900 py-20 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">API Partner</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">

@@ -3,6 +3,14 @@ import { motion } from 'motion/react';
 import { Star, ArrowRight, Download } from 'lucide-react';
 
 const DownloadApp = () => {
+  const getImageUrl = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    if (path.startsWith('http')) return path;
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${cleanBase}${cleanPath}`;
+  };
+
   return (
     <section className="pt-20 pb-24 bg-slate-50 relative overflow-hidden">
       {/* Decorative Elements */}
@@ -48,7 +56,7 @@ const DownloadApp = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-10"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 sm:gap-10"
             >
               {/* Google Play Button */}
               <a 
@@ -59,22 +67,22 @@ const DownloadApp = () => {
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" 
                   alt="Get it on Google Play" 
-                  className="h-16 w-auto relative"
+                  className="h-14 sm:h-16 w-auto relative"
                   referrerPolicy="no-referrer"
                 />
               </a>
 
               {/* Social Proof & Rating Group */}
-              <div className="flex items-center gap-8 divide-x divide-slate-200">
+              <div className="flex flex-col xs:flex-row items-center gap-6 sm:gap-8 xs:divide-x divide-slate-200">
                 {/* Retailers */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
                   <div className="flex -space-x-3">
                     {[
                       "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?auto=format&fit=crop&q=80&w=100&h=100",
                       "https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=100&h=100",
                       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100&h=100"
                     ].map((url, i) => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-slate-200">
+                      <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white overflow-hidden bg-slate-200">
                         <img 
                           src={url} 
                           alt="Happy Retailer" 
@@ -85,22 +93,22 @@ const DownloadApp = () => {
                     ))}
                   </div>
                   <div className="text-left">
-                    <div className="font-bold text-slate-900 text-lg leading-none">1 Lakh+</div>
-                    <div className="text-slate-500 text-xs mt-1">Happy Retailers</div>
+                    <div className="font-bold text-slate-900 text-base sm:text-lg leading-none">1 Lakh+</div>
+                    <div className="text-slate-500 text-[10px] sm:text-xs mt-1">Happy Retailers</div>
                   </div>
                 </div>
 
                 {/* Rating */}
-                <div className="pl-8">
+                <div className="xs:pl-6 sm:pl-8">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-bold text-slate-900 text-xl">4.8/5</span>
+                    <span className="font-bold text-slate-900 text-lg sm:text-xl">4.8/5</span>
                     <div className="flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
+                        <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
                       ))}
                     </div>
                   </div>
-                  <div className="text-slate-500 text-xs text-left">Trusted Rating</div>
+                  <div className="text-slate-500 text-[10px] sm:text-xs text-left">Trusted Rating</div>
                 </div>
               </div>
             </motion.div>
@@ -124,7 +132,7 @@ const DownloadApp = () => {
                 <div className="bg-slate-900 rounded-[3rem] p-3 border-4 border-slate-800">
                   <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative p-4 flex items-center justify-center">
                     <img 
-                      src="/app-screen-1.png" 
+                      src={getImageUrl('app-screen-1.png')} 
                       alt="Zestpay App Dashboard" 
                       className="max-w-full max-h-full object-contain"
                       loading="lazy"
@@ -142,7 +150,7 @@ const DownloadApp = () => {
                 <div className="bg-slate-900 rounded-[2.5rem] p-2.5 shadow-2xl border-4 border-slate-800">
                   <div className="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5] relative p-4 flex items-center justify-center">
                     <img 
-                      src="/app-screen-2.jpeg" 
+                      src={getImageUrl('app-screen-2.jpeg')} 
                       alt="Zestpay Services" 
                       className="max-w-full max-h-full object-contain"
                       loading="lazy"

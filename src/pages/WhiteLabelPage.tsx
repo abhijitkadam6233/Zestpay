@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Settings, Code, Layout, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const WhiteLabelPage = () => {
   return (
@@ -10,6 +11,11 @@ const WhiteLabelPage = () => {
       exit={{ opacity: 0 }}
       className="pt-20 pb-24 bg-slate-50 min-h-screen"
     >
+      <SEO 
+        title="White Label Partner" 
+        description="Launch your own fintech brand with Zestpay's white label solution. Get a fully customizable platform with your branding and our technology."
+        keywords="Zestpay white label, fintech branding, custom portal, B2B fintech solution, branded banking"
+      />
       <div className="bg-slate-900 py-20 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">White Label Partner</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">

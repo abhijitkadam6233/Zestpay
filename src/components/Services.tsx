@@ -106,7 +106,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="pt-0 pb-0 bg-slate-50">
+    <section id="services" className="py-12 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.div 
@@ -137,7 +137,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -148,16 +148,16 @@ const Services = () => {
             >
               <Link
                 to={`/services/${service.id}`}
-                className="group block bg-white p-8 rounded-[2rem] shadow-premium border border-slate-100 hover:shadow-hover hover:-translate-y-2 transition-all duration-300 h-full"
+                className="group block bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-premium border border-slate-100 hover:shadow-hover hover:-translate-y-2 transition-all duration-300 h-full"
               >
-                <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
-                  {React.cloneElement(service.icon as React.ReactElement, { size: 32 })}
+                <div className={`w-14 h-14 sm:w-16 sm:h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                  {React.cloneElement(service.icon as React.ReactElement, { size: 28 })}
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-brand transition-colors">{service.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                <h3 className="text-lg sm:text-xl font-bold text-primary mb-3 sm:mb-4 group-hover:text-brand transition-colors">{service.title}</h3>
+                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
                   {service.description}
                 </p>
-                <div className="flex items-center text-brand font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all">
+                <div className="flex items-center text-brand font-bold text-[10px] sm:text-xs uppercase tracking-widest group-hover:gap-2 transition-all">
                   Learn More <ArrowRight size={14} className="ml-2" />
                 </div>
               </Link>

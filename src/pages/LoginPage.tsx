@@ -14,6 +14,7 @@ import {
   Twitter,
   Instagram,
   Linkedin,
+  Youtube,
   X,
   DownloadCloud
 } from 'lucide-react';
@@ -21,33 +22,23 @@ import {
 const banners = [
   {
     id: 0,
-    title: "Highest Commissions",
-    subtitle: "Earn industry-leading commission rates and grow your business with Zestpay.",
-    image: "/login-1.png"
+    image: "/auth-bg-1.png"
   },
   {
     id: 1,
-    title: "Lightning Fast Settlements",
-    subtitle: "Get your money instantly with our real-time settlement infrastructure.",
-    image: "/login-2.png"
+    image: "/auth-bg-2.png"
   },
   {
     id: 2,
-    title: "Bank-Grade Security",
-    subtitle: "Your transactions are protected by end-to-end AES-256 encryption.",
-    image: "/login-3.png"
+    image: "/auth-bg-3.png"
   },
   {
     id: 3,
-    title: "24/7 Dedicated Support",
-    subtitle: "Our expert team is always here to help you succeed and resolve any issues.",
-    image: "/login-4.png"
+    image: "/auth-bg-4.png"
   },
   {
     id: 4,
-    title: "Expand Your Reach",
-    subtitle: "Join thousands of partners across the country and scale your business effortlessly.",
-    image: "/login-5.png"
+    image: "/auth-bg-5.png"
   }
 ];
 
@@ -60,6 +51,13 @@ const LoginPage = () => {
   const [showOtpModal, setShowOtpModal] = useState(false);
   const [otp, setOtp] = useState('');
   const [otpLoading, setOtpLoading] = useState(false);
+  const getImageUrl = (path: string) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    if (path.startsWith('http')) return path;
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${cleanBase}${cleanPath}`;
+  };
 
   // Auto-slide banners
   useEffect(() => {
@@ -111,8 +109,8 @@ const LoginPage = () => {
           <AnimatePresence initial={false}>
             <motion.img
               key={currentBanner}
-              src={banners[currentBanner].image}
-              alt={banners[currentBanner].title}
+              src={getImageUrl(banners[currentBanner].image)}
+              alt="Zestpay Banner"
               referrerPolicy="no-referrer"
               initial={{ opacity: 0, x: 20, scale: 1.02 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -145,16 +143,16 @@ const LoginPage = () => {
       </div>
 
       {/* Right Side: Login Form Area */}
-      <div className="w-full lg:w-1/2 flex flex-col px-6 py-12 sm:px-12 md:px-20 xl:px-32 relative z-10 overflow-y-auto bg-white">
+      <div className="w-full lg:w-1/2 flex flex-col px-4 py-6 sm:px-8 md:px-12 xl:px-16 relative z-10 overflow-y-auto bg-white pb-20">
         
-        {/* Mobile Logo */}
-        <div className="lg:hidden mb-12">
+        {/* Logo */}
+        <div className="mb-2">
           <Link to="/" className="flex items-center">
-            <Logo className="scale-90 origin-left" />
+            <Logo className="scale-75 origin-left" />
           </Link>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center max-w-md w-full mx-auto lg:mx-0">
+        <div className="w-full max-w-md mx-auto lg:mx-0 py-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -321,7 +319,7 @@ const LoginPage = () => {
               </motion.div>
 
               <motion.div variants={itemVariants} className="flex justify-center gap-6 mt-8">
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
+                <a href="https://www.facebook.com/info.Zestpay" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
                   <span className="sr-only">Facebook</span>
                   <Facebook size={20} fill="currentColor" />
                 </a>
@@ -329,13 +327,17 @@ const LoginPage = () => {
                   <span className="sr-only">Twitter</span>
                   <Twitter size={20} fill="currentColor" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
+                <a href="https://www.instagram.com/info.zestpay" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
                   <span className="sr-only">Instagram</span>
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
+                <a href="https://www.linkedin.com/company/infozestpay/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
                   <span className="sr-only">LinkedIn</span>
                   <Linkedin size={20} fill="currentColor" />
+                </a>
+                <a href="https://m.youtube.com/@zestpay" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-[#FF0000] hover:bg-[#FF0000] hover:text-white transition-all duration-300 shadow-sm border border-slate-100">
+                  <span className="sr-only">YouTube</span>
+                  <Youtube size={20} fill="currentColor" />
                 </a>
               </motion.div>
             </motion.form>

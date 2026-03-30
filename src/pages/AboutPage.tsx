@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import About from '../components/About';
+import FAQ from '../components/FAQ';
+import SEO from '../components/SEO';
 
 const AboutPage = () => {
   return (
@@ -10,6 +12,11 @@ const AboutPage = () => {
       exit={{ opacity: 0 }}
       className="pt-20"
     >
+      <SEO 
+        title="About Us" 
+        description="Learn about Zestpay's mission to empower local retailers and our vision for financial inclusion across India."
+        keywords="Zestpay about, mission, vision, fintech team, financial inclusion India"
+      />
       <div className="bg-slate-900 py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">About Us</h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto px-4">
@@ -17,6 +24,7 @@ const AboutPage = () => {
         </p>
       </div>
       <About />
+      <FAQ />
     </motion.div>
   );
 };
